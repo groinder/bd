@@ -1,0 +1,1 @@
+select GRUPA_KRWI as "Grupa", PLEC_DAWCY as "Plec", count(GRUPA_KRWI) as "Liczba dawcow" from DAWCY group by GRUPA_KRWI, PLEC_DAWCY;

@@ -1,0 +1,1 @@
+SELECT COUNT(PSEUDO_WAMPIRA) as "Liczba sprawnosci" from SPRAWNOSCI_W where PSEUDO_WAMPIRA='Opoj' or PSEUDO_WAMPIRA='Czerwony';

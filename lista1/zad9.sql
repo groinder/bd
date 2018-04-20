@@ -1,0 +1,4 @@
+select DONACJE.NR_ZLECENIA as "Zlecenia AB"
+from DONACJE
+  inner join DAWCY D on DONACJE.PSEUDO_DAWCY = D.PSEUDO_DAWCY
+where D.GRUPA_KRWI = 'AB';

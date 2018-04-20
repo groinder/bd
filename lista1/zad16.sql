@@ -1,0 +1,25 @@
+select
+  PSEUDO_DAWCY,
+  ROCZNIK_DAWCY
+from DAWCY
+where GRUPA_KRWI = '0';
+
+update DAWCY
+set ROCZNIK_DAWCY = ROCZNIK_DAWCY + 5
+where GRUPA_KRWI = '0';
+
+select
+  PSEUDO_DAWCY,
+  ROCZNIK_DAWCY
+from DAWCY
+where GRUPA_KRWI = '0';
+
+update DAWCY
+set ROCZNIK_DAWCY = ROCZNIK_DAWCY - 5
+where GRUPA_KRWI = '0';
+
+select
+  PSEUDO_DAWCY,
+  ROCZNIK_DAWCY
+from DAWCY
+where GRUPA_KRWI = '0';
