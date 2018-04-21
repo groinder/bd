@@ -1,1 +1,6 @@
-select PSEUDO_WAMPIRA as "Wampir", count(PSEUDO_WAMPIRA) as "Liczba konsumpcji" from DONACJE group by PSEUDO_WAMPIRA having count(PSEUDO_WAMPIRA) > 1;
+SELECT
+  PSEUDO_WAMPIRA        AS "Wampir",
+  count(PSEUDO_WAMPIRA) AS "Liczba konsumpcji"
+FROM DONACJE
+GROUP BY PSEUDO_WAMPIRA
+HAVING count(PSEUDO_WAMPIRA) > 1;

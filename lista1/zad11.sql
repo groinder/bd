@@ -1,31 +1,19 @@
-select
-  PSEUDO_DAWCY             as "Pseudonim",
-  case when sum(ILOSC_KRWI) > 1000
-    then 'Powyzej 1000'
-  when sum(ILOSC_KRWI) <= 1000 and sum(ILOSC_KRWI) >= 700
-    then 'Miedzy 700 a 1000'
-  when sum(ILOSC_KRWI) < 700
-    then 'Ponizej 700' end as "Pobor"
-from DONACJE
-group by PSEUDO_DAWCY
-order by PSEUDO_DAWCY asc;
-
-select
-  PSEUDO_DAWCY as "Pseudonim",
-  'Powyzej 1000' as "Pobor"
-from DONACJE
-group by PSEUDO_DAWCY
-having sum(ILOSC_KRWI) > 1000
-union select
-        PSEUDO_DAWCY as "Pseudonim",
-        'Miedzy 700 a 1000'
-      from DONACJE
-      group by PSEUDO_DAWCY
-      having sum(ILOSC_KRWI) <= 1000 and sum(ILOSC_KRWI) >= 700
-union select
-        PSEUDO_DAWCY as "Pseudonim",
-        'Ponizej 700'
-      from DONACJE
-      group by PSEUDO_DAWCY
-      having sum(ILOSC_KRWI) < 700
-order by "Pseudonim" asc;
+SELECT
+  PSEUDO_DAWCY   AS "Pseudonim",
+  'Powyzej 1000' AS "Pobor"
+FROM DONACJE
+GROUP BY PSEUDO_DAWCY
+HAVING sum(ILOSC_KRWI) > 1000
+UNION ALL SELECT
+            PSEUDO_DAWCY AS "Pseudonim",
+            'Miedzy 700 a 1000'
+          FROM DONACJE
+          GROUP BY PSEUDO_DAWCY
+          HAVING sum(ILOSC_KRWI) <= 1000 AND sum(ILOSC_KRWI) >= 700
+UNION ALL SELECT
+            PSEUDO_DAWCY AS "Pseudonim",
+            'Ponizej 700'
+          FROM DONACJE
+          GROUP BY PSEUDO_DAWCY
+          HAVING sum(ILOSC_KRWI) < 700
+ORDER BY "Pseudonim" ASC;

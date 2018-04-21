@@ -1,1 +1,3 @@
-select sum(ILOSC_KRWI) as "Cieple buleczki" from DONACJE where DATA_WYDANIA - DATA_ODDANIA <= 10;
+SELECT sum(ILOSC_KRWI) AS "Cieple buleczki"
+FROM DONACJE
+WHERE DATA_WYDANIA - DATA_ODDANIA < 11;
