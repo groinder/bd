@@ -1,25 +1,21 @@
-select sum(ILOSC_KRWI) IloscDrakula,
-  case W.PLEC_WAMPIRA when 'M' then 'Wampiry' else 'Wampirki' end Plec,
-  W.PSEUDO_SZEFA
-from DONACJE
-  inner join WAMPIRY W on DONACJE.PSEUDO_WAMPIRA = W.PSEUDO_WAMPIRA
-  where PSEUDO_SZEFA = 'Drakula'
-group by W.PSEUDO_SZEFA, W.PLEC_WAMPIRA;
-
-select PSEUDO_SZEFA from WAMPIRY where PSEUDO_SZEFA is not null group by PSEUDO_SZEFA;
-
-select Plec "Plec podwladnych",
-  (select ilosc from(select sum(ILOSC_KRWI) Ilosc,
-                            case W.PLEC_WAMPIRA when 'M' then 'Wampiry' else 'Wampirki' end Plec,
-                       W.PSEUDO_SZEFA
-                     from DONACJE
-                       inner join WAMPIRY W on DONACJE.PSEUDO_WAMPIRA = W.PSEUDO_WAMPIRA
-                     where PSEUDO_SZEFA = 'Drakula'
-                     group by W.PSEUDO_SZEFA, W.PLEC_WAMPIRA) PD) "Pod Drakula"
-from(select sum(ILOSC_KRWI) Ilosc,
-            case W.PLEC_WAMPIRA when 'M' then 'Wampiry' else 'Wampirki' end Plec,
-       W.PSEUDO_SZEFA
-     from DONACJE
-       inner join WAMPIRY W on DONACJE.PSEUDO_WAMPIRA = W.PSEUDO_WAMPIRA
-     where PSEUDO_SZEFA = 'Drakula'
-     group by W.PSEUDO_SZEFA, W.PLEC_WAMPIRA) PD;
+SELECT
+  CASE W4.PLEC_WAMPIRA WHEN 'M' THEN 'Wampiry' ELSE 'Wampirki' end AS "Plec podwladnych",
+  sum(ILOSC_KRWI) AS "Pod Drakula",
+  X1."Pod Opojem",
+  X2."Pod Wickiem"
+FROM DONACJE D INNER JOIN WAMPIRY W4 ON D.PSEUDO_WAMPIRA = W4.PSEUDO_WAMPIRA
+  left JOIN (SELECT
+          W4.PLEC_WAMPIRA AS "Plec podwladnych",
+          sum(ILOSC_KRWI) AS "Pod Opojem"
+        FROM DONACJE D INNER JOIN WAMPIRY W4 ON D.PSEUDO_WAMPIRA = W4.PSEUDO_WAMPIRA
+        WHERE W4.PSEUDO_SZEFA = 'Opoj'
+        GROUP BY W4.PLEC_WAMPIRA) X1 ON X1."Plec podwladnych" = W4.PLEC_WAMPIRA
+  left JOIN (SELECT
+               W4.PLEC_WAMPIRA AS "Plec podwladnych",
+               sum(ILOSC_KRWI) AS "Pod Wickiem"
+             FROM DONACJE D INNER JOIN WAMPIRY W4 ON D.PSEUDO_WAMPIRA = W4.PSEUDO_WAMPIRA
+             WHERE W4.PSEUDO_SZEFA = 'Wicek'
+             GROUP BY W4.PLEC_WAMPIRA) X2 ON X2."Plec podwladnych" = W4.PLEC_WAMPIRA
+WHERE W4.PSEUDO_SZEFA = 'Drakula'
+GROUP BY W4.PLEC_WAMPIRA, X1."Pod Opojem", X2."Pod Wickiem"
+ORDER BY "Plec podwladnych" ASC;
