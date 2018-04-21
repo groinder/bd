@@ -1,4 +1,4 @@
-SELECT
+CREATE VIEW zad19 as SELECT
   CASE W4.PLEC_WAMPIRA WHEN 'M' THEN 'Wampiry' ELSE 'Wampirki' end AS "Plec podwladnych",
   sum(ILOSC_KRWI) AS "Pod Drakula",
   X1."Pod Opojem",
