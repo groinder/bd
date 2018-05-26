@@ -1,3 +1,6 @@
+alter table BANDY
+  enable constraint B_PSEUDO_ZARZADCY_FK;
+
 insert into BANDY (NUMER_BANDY, NAZWA_BANDY, PSEUDO_ZARZADCY) values (1, 'Józki', 'Tygrys');
 insert into BANDY (NUMER_BANDY, NAZWA_BANDY, PSEUDO_ZARZADCY) values (2, 'Ruski', null);
 insert into BANDY (NUMER_BANDY, NAZWA_BANDY, PSEUDO_ZARZADCY) values (3, 'Różowi łowcy', 'Kasia');
@@ -20,6 +23,7 @@ insert into FUNKCJE (NAZWA_FUNKCJI, MIN_MYSZY, MAX_MYSZY) values ('Żniwiaż', 6
 insert into FUNKCJE (NAZWA_FUNKCJI, MIN_MYSZY, MAX_MYSZY) values ('Koteł', 30, 50);
 insert into FUNKCJE (NAZWA_FUNKCJI, MIN_MYSZY, MAX_MYSZY) values ('Grubcio', 10, 70);
 
+alter session set nls_date_format = 'DD.MM.YYYY';
 insert into KOTY (PSEUDO_KOTA, PLEC_KOTA, DATA_PRZYJECIA, PRZYDZIAL_MYSZY, PSEUDO_SZEFA, NUMER_BANDY, NAZWA_FUNKCJI)
 values ('Tygrys', 'M', '17.11.2003', 100, null, 1, 'Szef');
 insert into KOTY (PSEUDO_KOTA, PLEC_KOTA, DATA_PRZYJECIA, PRZYDZIAL_MYSZY, PSEUDO_SZEFA, NUMER_BANDY, NAZWA_FUNKCJI)
@@ -35,7 +39,7 @@ values ('Klaus', 'M', '02.08.2007', 50, 'Kasia', 5, 'Strażnik');
 insert into KOTY (PSEUDO_KOTA, PLEC_KOTA, DATA_PRZYJECIA, PRZYDZIAL_MYSZY, PSEUDO_SZEFA, NUMER_BANDY, NAZWA_FUNKCJI)
 values ('Talar', 'M', '05.12.2010', 70, 'Klaus', 8, 'Lapacz');
 insert into KOTY (PSEUDO_KOTA, PLEC_KOTA, DATA_PRZYJECIA, PRZYDZIAL_MYSZY, PSEUDO_SZEFA, NUMER_BANDY, NAZWA_FUNKCJI)
-values ('Miaulka', 'K', '11.09.2011', 60, 'Lowca', 8, 'Lowca');
+values ('Miaulka', 'K', '11.09.2011', 60, 'Kreska', 8, 'Lowca');
 insert into KOTY (PSEUDO_KOTA, PLEC_KOTA, DATA_PRZYJECIA, PRZYDZIAL_MYSZY, PSEUDO_SZEFA, NUMER_BANDY, NAZWA_FUNKCJI)
 values ('Mordeczka', 'K', '30.07.2012', 65, 'Talar', 9, 'Rybak');
 insert into KOTY (PSEUDO_KOTA, PLEC_KOTA, DATA_PRZYJECIA, PRZYDZIAL_MYSZY, PSEUDO_SZEFA, NUMER_BANDY, NAZWA_FUNKCJI)
@@ -51,6 +55,7 @@ values ('Lumpek', 'M', '25.12.2010', 20, 'Gacunio', 10, 'Grubcio');
 insert into KOTY (PSEUDO_KOTA, PLEC_KOTA, DATA_PRZYJECIA, PRZYDZIAL_MYSZY, PSEUDO_SZEFA, NUMER_BANDY, NAZWA_FUNKCJI)
 values ('Mafiozo', 'M', '18.12.2003', 90, 'Tygrys', 4, 'Żniwiaż');
 
+alter session set nls_date_format = 'DD.MM.YYYY';
 insert into MYSZY (NUMER_MYSZY, DATA_UPOLOWANIA, WAGA, DLUGOSC, DATA_WYDANIA, PSEUDO_LOWCY, PSEUDO_ZJADACZA)
 values (1, '17.11.2003', 50, 15, '18.11.2003', 'Tygrys', 'Tygrys');
 insert into MYSZY (NUMER_MYSZY, DATA_UPOLOWANIA, WAGA, DLUGOSC, DATA_WYDANIA, PSEUDO_LOWCY, PSEUDO_ZJADACZA)
@@ -114,6 +119,7 @@ insert into TERENY (NAZWA_TERENU) values ('Wysypisko');
 insert into TERENY (NAZWA_TERENU) values ('Las');
 insert into TERENY (NAZWA_TERENU) values ('Podwórze');
 insert into TERENY (NAZWA_TERENU) values ('Pole');
+insert into TERENY (NAZWA_TERENU) values ('Łyse pole');
 
 insert into GRATYFIKACJE_WROGOW (IMIE_WROGA, NAZWA_GRATYFIKACJI) values ('Miodek', 'Miód');
 insert into GRATYFIKACJE_WROGOW (IMIE_WROGA, NAZWA_GRATYFIKACJI) values ('Lucjan', 'Mięso');
@@ -123,6 +129,7 @@ insert into GRATYFIKACJE_WROGOW (IMIE_WROGA, NAZWA_GRATYFIKACJI) values ('Madonn
 insert into GRATYFIKACJE_WROGOW (IMIE_WROGA, NAZWA_GRATYFIKACJI) values ('Naruto', 'Szyszka');
 insert into GRATYFIKACJE_WROGOW (IMIE_WROGA, NAZWA_GRATYFIKACJI) values ('Rupert', 'Kamień');
 insert into GRATYFIKACJE_WROGOW (IMIE_WROGA, NAZWA_GRATYFIKACJI) values ('Szkitek', 'Smieci');
+insert into GRATYFIKACJE_WROGOW (IMIE_WROGA, NAZWA_GRATYFIKACJI) values ('Szkitek', 'Miód');
 insert into GRATYFIKACJE_WROGOW (IMIE_WROGA, NAZWA_GRATYFIKACJI) values ('Sakura', 'Buty');
 insert into GRATYFIKACJE_WROGOW (IMIE_WROGA, NAZWA_GRATYFIKACJI) values ('Timon', 'Olej');
 
@@ -141,4 +148,19 @@ insert into INCYDENTY (PSEUDO_KOTA, IMIE_WROGA, DATA, OPIS)
 values ('Mafiozo', 'Miodek', '01.01.2004', 'Był na wyprawie i pożądliły go pszczoły pod dowództwem Miodka');
 insert into INCYDENTY (PSEUDO_KOTA, IMIE_WROGA, DATA, OPIS)
 values ('Joda', 'Lucjan', '17.12.2010', 'Gonił mysz i trafił na strasznego gada co chciał go pożreć');
-insert into INCYDENTY (PSEUDO_KOTA, IMIE_WROGA, DATA, OPIS) values ();
+insert into INCYDENTY (PSEUDO_KOTA, IMIE_WROGA, DATA, OPIS)
+values ('Syjamczyk', 'Krokodyl', '19.02.2016', 'Prawie wpadł do jego paszczy kiedy spadał z drzewa');
+insert into INCYDENTY (PSEUDO_KOTA, IMIE_WROGA, DATA, OPIS)
+values ('Cytruś', 'Julka', '12.12.2015', 'Chciała zaściskać na śmierć');
+insert into INCYDENTY (PSEUDO_KOTA, IMIE_WROGA, DATA, OPIS)
+values ('Gacunio', 'Madonna', '16.05.2013', 'Ugryziony w ogon kiedy spał');
+insert into INCYDENTY (PSEUDO_KOTA, IMIE_WROGA, DATA, OPIS)
+values ('Kasia', 'Naruto', '18.06.2013', 'Nadepnął na ogon');
+insert into INCYDENTY (PSEUDO_KOTA, IMIE_WROGA, DATA, OPIS)
+values ('Kreska', 'Rupert', '22.09.2014', 'Wykopał dziury na terenach łowów');
+insert into INCYDENTY (PSEUDO_KOTA, IMIE_WROGA, DATA, OPIS)
+values ('Tygrys', 'Szkitek', '29.08.2004', 'Gonił zawzięcie przez cały dzień, pewnie żeby pożreć');
+insert into INCYDENTY (PSEUDO_KOTA, IMIE_WROGA, DATA, OPIS)
+values ('Lumpek', 'Sakura', '18.10.2016', 'Dziobała go w głowę');
+insert into INCYDENTY (PSEUDO_KOTA, IMIE_WROGA, DATA, OPIS)
+values ('Kasia', 'Timon', '13.12.2005', 'Chciał wyssać z niej duszę');

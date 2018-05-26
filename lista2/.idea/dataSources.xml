@@ -4,7 +4,6 @@
     <data-source source="LOCAL" name="@156.17.130.125" uuid="0924f4f8-fed9-44c0-808c-b889d86e3551">
       <driver-ref>oracle</driver-ref>
       <synchronize>true</synchronize>
-      <auto-commit>false</auto-commit>
       <jdbc-driver>oracle.jdbc.OracleDriver</jdbc-driver>
       <jdbc-url>jdbc:oracle:thin:@156.17.130.125:1521:orcl</jdbc-url>
       <driver-properties>

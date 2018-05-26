@@ -1,7 +1,7 @@
 create table Bandy (
   numer_bandy     number(3)    constraint b_numer_bandy_nn not null constraint b_numer_bandy_pk primary key,
   nazwa_bandy     varchar2(32) constraint b_nazwa_bandy_nn not null,
-  pseudo_zarzadcy varchar2(32)
+  pseudo_zarzadcy varchar2(32) constraint b_pseudo_zarzadcy_fk references Koty (pseudo_kota)
 );
 
 create table Funkcje (
@@ -10,6 +10,9 @@ create table Funkcje (
   max_myszy     number(3)    constraint max_myszy_nn not null
 );
 
+ALTER TABLE Funkcje
+  ADD CONSTRAINT f_min_max CHECK (min_myszy < max_myszy);
+
 create table Koty (
   pseudo_kota     varchar2(32) constraint k_pseudo_kota_nn not null constraint k_pseudo_kota_pk primary key,
   plec_kota       char         constraint k_plec_kota_nn not null constraint k_plec_kota_ch check (plec_kota in
@@ -17,11 +20,13 @@ create table Koty (
   data_przyjecia  date         constraint k_data_przyjecia not null,
   przydzial_myszy number(3) constraint k_przydzial_myszy_ch check (przydzial_myszy > -1),
   pseudo_szefa    varchar2(32) constraint k_pseudo_szefa_fk references Koty (pseudo_kota),
-  numer_bandy     number(3)    constraint k_numer_bandy_fk references Bandy (numer_bandy),
+  numer_bandy     number(3) constraint k_numer_bandy_fk references Bandy (numer_bandy),
   nazwa_funkcji   varchar2(32) constraint k_nazwa_funkcji_nn not null constraint k_nazwa_funkcji_fk references Funkcje (nazwa_funkcji)
 );
 
-ALTER TABLE Bandy ADD CONSTRAINT b_pseudo_zarzadcy_fk FOREIGN KEY (pseudo_zarzadcy) REFERENCES Koty(pseudo_kota) DEFERRABLE;
+ALTER TABLE Bandy
+  ADD CONSTRAINT b_pseudo_zarzadcy_fk FOREIGN KEY (pseudo_zarzadcy) REFERENCES Koty (pseudo_kota)
+  DEFERRABLE;
 
 create table Myszy (
   numer_myszy     number       constraint m_numer_myszy_nn not null constraint n_numer_myszy_pk primary key,
@@ -32,6 +37,9 @@ create table Myszy (
   pseudo_lowcy    varchar2(32) constraint m_pseudo_lowcy_nn not null constraint m_pseudo_lowcy_fk references Koty (pseudo_kota),
   pseudo_zjadacza varchar2(32) constraint m_pseudo_zjadacza_fk references Koty (pseudo_kota)
 );
+
+ALTER TABLE Myszy
+  ADD CONSTRAINT m_daty CHECK (data_upolowania < data_wydania);
 
 create table Wrogowie (
   imie_wroga       varchar2(32) constraint w_imie_wroga_nn not null constraint w_imie_wroga_pk primary key,
@@ -51,8 +59,8 @@ create table Tereny (
 CREATE TABLE Incydenty (
   pseudo_kota VARCHAR2(32) CONSTRAINT i_pseudo_kota_fk REFERENCES Koty (pseudo_kota),
   imie_wroga  VARCHAR2(32) CONSTRAINT i_imie_wroga_fk REFERENCES Wrogowie (imie_wroga),
-  data        DATE         CONSTRAINT data_nn NOT NULL,
-  opis        VARCHAR2(32) CONSTRAINT opis_nn NOT NULL,
+  data        DATE          CONSTRAINT data_nn NOT NULL,
+  opis        VARCHAR2(200) CONSTRAINT opis_nn NOT NULL,
   CONSTRAINT incydenty_pk PRIMARY KEY (pseudo_kota, imie_wroga)
 );
 
@@ -67,3 +75,4 @@ CREATE TABLE Tereny_bandy (
   numer_bandy  NUMBER(3) CONSTRAINT tb_numer_bandy_fk REFERENCES Bandy (numer_bandy),
   CONSTRAINT tereny_bandy_pk PRIMARY KEY (nazwa_terenu, numer_bandy)
 );
+

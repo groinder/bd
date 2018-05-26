@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="@156.17.130.125">
-  <database-model serializer="dbm" rdbms="ORACLE" format-version="4.7">
-    <root id="1"/>
+  <database-model serializer="dbm" rdbms="ORACLE" format-version="4.9">
+    <root id="1">
+      <ServerVersion>12.1.0.2</ServerVersion>
+    </root>
     <schema id="2" parent="1" name="C##239266">
       <ObjectId>832</ObjectId>
-      <IntrospectionTimestamp>2018-05-26.00:30:22</IntrospectionTimestamp>
+      <IntrospectionTimestamp>2018-05-26.22:00:25</IntrospectionTimestamp>
       <CreatedTimestamp>2018-03-23.21:55:14</CreatedTimestamp>
-      <ModifiedTimestamp>2018-05-26.00:30:15</ModifiedTimestamp>
+      <ModifiedTimestamp>2018-05-26.22:00:21</ModifiedTimestamp>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -449,7 +451,7 @@
     <table id="140" parent="2" name="BANDY">
       <ObjectId>357709</ObjectId>
       <CreatedTimestamp>2018-05-25.00:49:34</CreatedTimestamp>
-      <ModifiedTimestamp>2018-05-25.01:03:20</ModifiedTimestamp>
+      <ModifiedTimestamp>2018-05-26.19:30:30</ModifiedTimestamp>
       <TemporaryPreserve>1</TemporaryPreserve>
     </table>
     <table id="141" parent="2" name="DAWCY">
@@ -467,7 +469,7 @@
     <table id="143" parent="2" name="FUNKCJE">
       <ObjectId>357712</ObjectId>
       <CreatedTimestamp>2018-05-25.00:50:49</CreatedTimestamp>
-      <ModifiedTimestamp>2018-05-25.00:50:49</ModifiedTimestamp>
+      <ModifiedTimestamp>2018-05-26.21:39:06</ModifiedTimestamp>
       <TemporaryPreserve>1</TemporaryPreserve>
     </table>
     <table id="144" parent="2" name="GRATYFIKACJE">
@@ -479,13 +481,13 @@
     <table id="145" parent="2" name="GRATYFIKACJE_WROGOW">
       <ObjectId>357724</ObjectId>
       <CreatedTimestamp>2018-05-25.00:50:50</CreatedTimestamp>
-      <ModifiedTimestamp>2018-05-25.00:50:50</ModifiedTimestamp>
+      <ModifiedTimestamp>2018-05-26.19:52:50</ModifiedTimestamp>
       <TemporaryPreserve>1</TemporaryPreserve>
     </table>
     <table id="146" parent="2" name="INCYDENTY">
       <ObjectId>357722</ObjectId>
       <CreatedTimestamp>2018-05-25.00:50:50</CreatedTimestamp>
-      <ModifiedTimestamp>2018-05-25.00:50:50</ModifiedTimestamp>
+      <ModifiedTimestamp>2018-05-26.19:11:03</ModifiedTimestamp>
       <TemporaryPreserve>1</TemporaryPreserve>
     </table>
     <table id="147" parent="2" name="JEZYKI_OBCE">
@@ -509,7 +511,7 @@
     <table id="150" parent="2" name="MYSZY">
       <ObjectId>357716</ObjectId>
       <CreatedTimestamp>2018-05-25.00:50:50</CreatedTimestamp>
-      <ModifiedTimestamp>2018-05-26.00:21:38</ModifiedTimestamp>
+      <ModifiedTimestamp>2018-05-26.21:39:17</ModifiedTimestamp>
       <TemporaryPreserve>1</TemporaryPreserve>
     </table>
     <table id="151" parent="2" name="SPRAWNOSCI">
@@ -554,42 +556,63 @@
       <ModifiedTimestamp>2018-03-24.20:51:33</ModifiedTimestamp>
       <TemporaryPreserve>1</TemporaryPreserve>
     </table>
-    <view id="158" parent="2" name="SPOZYCIE">
+    <view id="158" parent="2" name="DLUGIE_MYSZY">
+      <ObjectId>358688</ObjectId>
+      <DependsOnIds>357716</DependsOnIds>
+      <CreatedTimestamp>2018-05-26.21:44:37</CreatedTimestamp>
+      <ModifiedTimestamp>2018-05-26.21:44:37</ModifiedTimestamp>
+      <Modifiable>1</Modifiable>
+    </view>
+    <view id="159" parent="2" name="LATWI_WROGOWIE">
+      <ObjectId>358695</ObjectId>
+      <DependsOnIds>357724,357718</DependsOnIds>
+      <CreatedTimestamp>2018-05-26.21:54:11</CreatedTimestamp>
+      <ModifiedTimestamp>2018-05-26.21:54:11</ModifiedTimestamp>
+      <Modifiable>1</Modifiable>
+    </view>
+    <view id="160" parent="2" name="SPOZYCIE">
       <ObjectId>350512</ObjectId>
       <DependsOnIds>343834</DependsOnIds>
       <CreatedTimestamp>2018-04-20.02:14:33</CreatedTimestamp>
       <ModifiedTimestamp>2018-04-20.02:14:33</ModifiedTimestamp>
       <Modifiable>1</Modifiable>
     </view>
-    <view id="159" parent="2" name="ZAD19">
+    <view id="161" parent="2" name="TRUDNI_WROGOWIE">
+      <ObjectId>358706</ObjectId>
+      <DependsOnIds>357707,357718,357724</DependsOnIds>
+      <CreatedTimestamp>2018-05-26.22:00:21</CreatedTimestamp>
+      <ModifiedTimestamp>2018-05-26.22:00:21</ModifiedTimestamp>
+      <Modifiable>1</Modifiable>
+    </view>
+    <view id="162" parent="2" name="ZAD19">
       <ObjectId>351494</ObjectId>
       <DependsOnIds>343828,343834</DependsOnIds>
       <CreatedTimestamp>2018-04-21.22:17:14</CreatedTimestamp>
       <ModifiedTimestamp>2018-04-21.22:17:14</ModifiedTimestamp>
       <Modifiable>1</Modifiable>
     </view>
-    <view id="160" parent="2" name="ZADANIA">
+    <view id="163" parent="2" name="ZADANIA">
       <ObjectId>350513</ObjectId>
       <DependsOnIds>343828,343830,343834</DependsOnIds>
       <CreatedTimestamp>2018-04-21.22:13:53</CreatedTimestamp>
       <ModifiedTimestamp>2018-04-21.22:13:53</ModifiedTimestamp>
       <Modifiable>1</Modifiable>
     </view>
-    <column id="161" parent="140" name="NUMER_BANDY">
+    <column id="164" parent="140" name="NUMER_BANDY">
       <Position>1</Position>
       <DataType>NUMBER(3 digit)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="162" parent="140" name="NAZWA_BANDY">
+    <column id="165" parent="140" name="NAZWA_BANDY">
       <Position>2</Position>
       <DataType>VARCHAR2(32 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="163" parent="140" name="PSEUDO_ZARZADCY">
+    <column id="166" parent="140" name="PSEUDO_ZARZADCY">
       <Position>3</Position>
       <DataType>VARCHAR2(32 byte)|0s</DataType>
     </column>
-    <index id="164" parent="140" name="B_NUMER_BANDY_PK">
+    <index id="167" parent="140" name="B_NUMER_BANDY_PK">
       <ObjectId>357710</ObjectId>
       <CreatedTimestamp>2018-05-25.00:49:34</CreatedTimestamp>
       <ModifiedTimestamp>2018-05-25.00:49:34</ModifiedTimestamp>
@@ -597,15 +620,15 @@
       <ColNames>NUMER_BANDY</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="165" parent="140" name="B_NUMER_BANDY_PK">
+    <key id="168" parent="140" name="B_NUMER_BANDY_PK">
       <ModifiedTimestamp>2018-05-25.00:49:34</ModifiedTimestamp>
       <ColNames>NUMER_BANDY</ColNames>
       <InitiallyDeferred>1</InitiallyDeferred>
       <UnderlyingIndexName>B_NUMER_BANDY_PK</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="166" parent="140" name="B_PSEUDO_ZARZADCY_FK">
-      <ModifiedTimestamp>2018-05-25.00:50:49</ModifiedTimestamp>
+    <foreign-key id="169" parent="140" name="B_PSEUDO_ZARZADCY_FK">
+      <ModifiedTimestamp>2018-05-26.19:30:30</ModifiedTimestamp>
       <ColNames>PSEUDO_ZARZADCY</ColNames>
       <Deferrable>1</Deferrable>
       <RefSchemaName>C##239266</RefSchemaName>
@@ -613,37 +636,37 @@
       <RefKeyName>K_PSEUDO_KOTA_PK</RefKeyName>
       <OnDelete>restrict</OnDelete>
     </foreign-key>
-    <check id="167" parent="140" name="B_NUMER_BANDY_NN">
+    <check id="170" parent="140" name="B_NUMER_BANDY_NN">
       <ModifiedTimestamp>2018-05-25.00:49:34</ModifiedTimestamp>
       <ColNames>NUMER_BANDY</ColNames>
       <Predicate>&quot;NUMER_BANDY&quot; IS NOT NULL</Predicate>
     </check>
-    <check id="168" parent="140" name="B_NAZWA_BANDY_NN">
+    <check id="171" parent="140" name="B_NAZWA_BANDY_NN">
       <ModifiedTimestamp>2018-05-25.00:49:34</ModifiedTimestamp>
       <ColNames>NAZWA_BANDY</ColNames>
       <Predicate>&quot;NAZWA_BANDY&quot; IS NOT NULL</Predicate>
     </check>
-    <column id="169" parent="141" name="PSEUDO_DAWCY">
+    <column id="172" parent="141" name="PSEUDO_DAWCY">
       <Position>1</Position>
       <DataType>VARCHAR2(15 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="170" parent="141" name="ROCZNIK_DAWCY">
+    <column id="173" parent="141" name="ROCZNIK_DAWCY">
       <Position>2</Position>
       <DataType>NUMBER(4 digit)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="171" parent="141" name="PLEC_DAWCY">
+    <column id="174" parent="141" name="PLEC_DAWCY">
       <Position>3</Position>
       <DataType>CHAR(1 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="172" parent="141" name="GRUPA_KRWI">
+    <column id="175" parent="141" name="GRUPA_KRWI">
       <Position>4</Position>
       <DataType>VARCHAR2(2 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="173" parent="141" name="PSEUDO_DAWCY_PK">
+    <index id="176" parent="141" name="PSEUDO_DAWCY_PK">
       <ObjectId>343833</ObjectId>
       <CreatedTimestamp>2018-03-24.20:51:33</CreatedTimestamp>
       <ModifiedTimestamp>2018-03-24.20:51:33</ModifiedTimestamp>
@@ -651,72 +674,72 @@
       <ColNames>PSEUDO_DAWCY</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="174" parent="141" name="PSEUDO_DAWCY_PK">
+    <key id="177" parent="141" name="PSEUDO_DAWCY_PK">
       <ModifiedTimestamp>2018-03-24.20:51:33</ModifiedTimestamp>
       <ColNames>PSEUDO_DAWCY</ColNames>
       <InitiallyDeferred>1</InitiallyDeferred>
       <UnderlyingIndexName>PSEUDO_DAWCY_PK</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <check id="175" parent="141" name="DA_PSEUDO_DAWCY_NN">
+    <check id="178" parent="141" name="DA_PSEUDO_DAWCY_NN">
       <ModifiedTimestamp>2018-03-24.20:51:33</ModifiedTimestamp>
       <ColNames>PSEUDO_DAWCY</ColNames>
       <Predicate>&quot;PSEUDO_DAWCY&quot; IS NOT NULL</Predicate>
     </check>
-    <check id="176" parent="141" name="DA_ROCZNIK_DAWCY_NN">
+    <check id="179" parent="141" name="DA_ROCZNIK_DAWCY_NN">
       <ModifiedTimestamp>2018-03-24.20:51:33</ModifiedTimestamp>
       <ColNames>ROCZNIK_DAWCY</ColNames>
       <Predicate>&quot;ROCZNIK_DAWCY&quot; IS NOT NULL</Predicate>
     </check>
-    <check id="177" parent="141" name="DA_PLEC_DAWCY_NN">
+    <check id="180" parent="141" name="DA_PLEC_DAWCY_NN">
       <ModifiedTimestamp>2018-03-24.20:51:33</ModifiedTimestamp>
       <ColNames>PLEC_DAWCY</ColNames>
       <Predicate>&quot;PLEC_DAWCY&quot; IS NOT NULL</Predicate>
     </check>
-    <check id="178" parent="141" name="PLEC_DAWCY_CH">
+    <check id="181" parent="141" name="PLEC_DAWCY_CH">
       <ModifiedTimestamp>2018-03-24.20:51:33</ModifiedTimestamp>
       <ColNames>PLEC_DAWCY</ColNames>
       <Predicate>plec_dawcy IN (&apos;K&apos;, &apos;M&apos;)</Predicate>
     </check>
-    <check id="179" parent="141" name="DA_GRUPA_KRWI_NN">
+    <check id="182" parent="141" name="DA_GRUPA_KRWI_NN">
       <ModifiedTimestamp>2018-03-24.20:51:33</ModifiedTimestamp>
       <ColNames>GRUPA_KRWI</ColNames>
       <Predicate>&quot;GRUPA_KRWI&quot; IS NOT NULL</Predicate>
     </check>
-    <check id="180" parent="141" name="GRUPA_KRWI_CH">
+    <check id="183" parent="141" name="GRUPA_KRWI_CH">
       <ModifiedTimestamp>2018-03-24.20:51:33</ModifiedTimestamp>
       <ColNames>GRUPA_KRWI</ColNames>
       <Predicate>grupa_krwi IN (&apos;0&apos;, &apos;A&apos;, &apos;B&apos;, &apos;AB&apos;)</Predicate>
     </check>
-    <column id="181" parent="142" name="NR_ZLECENIA">
+    <column id="184" parent="142" name="NR_ZLECENIA">
       <Position>1</Position>
       <DataType>NUMBER(6 digit)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="182" parent="142" name="PSEUDO_DAWCY">
+    <column id="185" parent="142" name="PSEUDO_DAWCY">
       <Position>2</Position>
       <DataType>VARCHAR2(15 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="183" parent="142" name="DATA_ODDANIA">
+    <column id="186" parent="142" name="DATA_ODDANIA">
       <Position>3</Position>
       <DataType>DATE|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="184" parent="142" name="ILOSC_KRWI">
+    <column id="187" parent="142" name="ILOSC_KRWI">
       <Position>4</Position>
       <DataType>NUMBER(3 digit)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="185" parent="142" name="PSEUDO_WAMPIRA">
+    <column id="188" parent="142" name="PSEUDO_WAMPIRA">
       <Position>5</Position>
       <DataType>VARCHAR2(15 byte)|0s</DataType>
     </column>
-    <column id="186" parent="142" name="DATA_WYDANIA">
+    <column id="189" parent="142" name="DATA_WYDANIA">
       <Position>6</Position>
       <DataType>DATE|0s</DataType>
     </column>
-    <index id="187" parent="142" name="DONACJE_PK">
+    <index id="190" parent="142" name="DONACJE_PK">
       <ObjectId>343835</ObjectId>
       <CreatedTimestamp>2018-03-24.20:51:33</CreatedTimestamp>
       <ModifiedTimestamp>2018-03-24.20:51:33</ModifiedTimestamp>
@@ -725,7 +748,7 @@
 PSEUDO_DAWCY</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="188" parent="142" name="DONACJE_PK">
+    <key id="191" parent="142" name="DONACJE_PK">
       <ModifiedTimestamp>2018-03-24.20:51:33</ModifiedTimestamp>
       <ColNames>NR_ZLECENIA
 PSEUDO_DAWCY</ColNames>
@@ -733,7 +756,7 @@ PSEUDO_DAWCY</ColNames>
       <UnderlyingIndexName>DONACJE_PK</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="189" parent="142" name="NR_ZLECENIA_FK">
+    <foreign-key id="192" parent="142" name="NR_ZLECENIA_FK">
       <ModifiedTimestamp>2018-03-24.20:51:33</ModifiedTimestamp>
       <ColNames>NR_ZLECENIA</ColNames>
       <RefSchemaName>C##239266</RefSchemaName>
@@ -741,7 +764,7 @@ PSEUDO_DAWCY</ColNames>
       <RefKeyName>NR_ZLECENIA_PK</RefKeyName>
       <OnDelete>restrict</OnDelete>
     </foreign-key>
-    <foreign-key id="190" parent="142" name="PSEUDO_DAWCY_FK">
+    <foreign-key id="193" parent="142" name="PSEUDO_DAWCY_FK">
       <ModifiedTimestamp>2018-03-24.20:51:33</ModifiedTimestamp>
       <ColNames>PSEUDO_DAWCY</ColNames>
       <RefSchemaName>C##239266</RefSchemaName>
@@ -749,7 +772,7 @@ PSEUDO_DAWCY</ColNames>
       <RefKeyName>PSEUDO_DAWCY_PK</RefKeyName>
       <OnDelete>restrict</OnDelete>
     </foreign-key>
-    <foreign-key id="191" parent="142" name="DO_PSEUDO_WAMPIRA_FK">
+    <foreign-key id="194" parent="142" name="DO_PSEUDO_WAMPIRA_FK">
       <ModifiedTimestamp>2018-03-24.20:51:33</ModifiedTimestamp>
       <ColNames>PSEUDO_WAMPIRA</ColNames>
       <RefSchemaName>C##239266</RefSchemaName>
@@ -757,53 +780,53 @@ PSEUDO_DAWCY</ColNames>
       <RefKeyName>PSEUDO_WAMPIRA_PK</RefKeyName>
       <OnDelete>restrict</OnDelete>
     </foreign-key>
-    <check id="192" parent="142" name="DO_NR_ZLECENIA_NN">
+    <check id="195" parent="142" name="DO_NR_ZLECENIA_NN">
       <ModifiedTimestamp>2018-03-24.20:51:33</ModifiedTimestamp>
       <ColNames>NR_ZLECENIA</ColNames>
       <Predicate>&quot;NR_ZLECENIA&quot; IS NOT NULL</Predicate>
     </check>
-    <check id="193" parent="142" name="DO_PSEUDO_DAWCY_NN">
+    <check id="196" parent="142" name="DO_PSEUDO_DAWCY_NN">
       <ModifiedTimestamp>2018-03-24.20:51:33</ModifiedTimestamp>
       <ColNames>PSEUDO_DAWCY</ColNames>
       <Predicate>&quot;PSEUDO_DAWCY&quot; IS NOT NULL</Predicate>
     </check>
-    <check id="194" parent="142" name="DO_DATA_WYDANIA_CH">
+    <check id="197" parent="142" name="DO_DATA_WYDANIA_CH">
       <ModifiedTimestamp>2018-03-24.20:51:33</ModifiedTimestamp>
       <ColNames>DATA_ODDANIA
 DATA_WYDANIA</ColNames>
       <Predicate>data_wydania &gt;= data_oddania</Predicate>
     </check>
-    <check id="195" parent="142" name="DO_DATA_ODDANIA_NN">
+    <check id="198" parent="142" name="DO_DATA_ODDANIA_NN">
       <ModifiedTimestamp>2018-03-24.20:51:33</ModifiedTimestamp>
       <ColNames>DATA_ODDANIA</ColNames>
       <Predicate>&quot;DATA_ODDANIA&quot; IS NOT NULL</Predicate>
     </check>
-    <check id="196" parent="142" name="DO_ILOSC_KRWI_NN">
+    <check id="199" parent="142" name="DO_ILOSC_KRWI_NN">
       <ModifiedTimestamp>2018-03-24.20:51:33</ModifiedTimestamp>
       <ColNames>ILOSC_KRWI</ColNames>
       <Predicate>&quot;ILOSC_KRWI&quot; IS NOT NULL</Predicate>
     </check>
-    <check id="197" parent="142" name="ILOSC_KRWI_CH">
+    <check id="200" parent="142" name="ILOSC_KRWI_CH">
       <ModifiedTimestamp>2018-03-24.20:51:33</ModifiedTimestamp>
       <ColNames>ILOSC_KRWI</ColNames>
       <Predicate>ilosc_krwi &gt; 0</Predicate>
     </check>
-    <column id="198" parent="143" name="NAZWA_FUNKCJI">
+    <column id="201" parent="143" name="NAZWA_FUNKCJI">
       <Position>1</Position>
       <DataType>VARCHAR2(32 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="199" parent="143" name="MIN_MYSZY">
+    <column id="202" parent="143" name="MIN_MYSZY">
       <Position>2</Position>
       <DataType>NUMBER(3 digit)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="200" parent="143" name="MAX_MYSZY">
+    <column id="203" parent="143" name="MAX_MYSZY">
       <Position>3</Position>
       <DataType>NUMBER(3 digit)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="201" parent="143" name="F_NAZWA_FUNCKJI_PK">
+    <index id="204" parent="143" name="F_NAZWA_FUNCKJI_PK">
       <ObjectId>357713</ObjectId>
       <CreatedTimestamp>2018-05-25.00:50:49</CreatedTimestamp>
       <ModifiedTimestamp>2018-05-25.00:50:49</ModifiedTimestamp>
@@ -811,39 +834,45 @@ DATA_WYDANIA</ColNames>
       <ColNames>NAZWA_FUNKCJI</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="202" parent="143" name="F_NAZWA_FUNCKJI_PK">
+    <key id="205" parent="143" name="F_NAZWA_FUNCKJI_PK">
       <ModifiedTimestamp>2018-05-25.00:50:49</ModifiedTimestamp>
       <ColNames>NAZWA_FUNKCJI</ColNames>
       <InitiallyDeferred>1</InitiallyDeferred>
       <UnderlyingIndexName>F_NAZWA_FUNCKJI_PK</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <check id="203" parent="143" name="F_NAZWA_FUNKCJI_NN">
+    <check id="206" parent="143" name="F_NAZWA_FUNKCJI_NN">
       <ModifiedTimestamp>2018-05-25.00:50:49</ModifiedTimestamp>
       <ColNames>NAZWA_FUNKCJI</ColNames>
       <Predicate>&quot;NAZWA_FUNKCJI&quot; IS NOT NULL</Predicate>
     </check>
-    <check id="204" parent="143" name="MIN_MYSZY_NN">
+    <check id="207" parent="143" name="MIN_MYSZY_NN">
       <ModifiedTimestamp>2018-05-25.00:50:49</ModifiedTimestamp>
       <ColNames>MIN_MYSZY</ColNames>
       <Predicate>&quot;MIN_MYSZY&quot; IS NOT NULL</Predicate>
     </check>
-    <check id="205" parent="143" name="MAX_MYSZY_NN">
+    <check id="208" parent="143" name="F_MIN_MAX">
+      <ModifiedTimestamp>2018-05-26.21:39:06</ModifiedTimestamp>
+      <ColNames>MAX_MYSZY
+MIN_MYSZY</ColNames>
+      <Predicate>min_myszy &lt; max_myszy</Predicate>
+    </check>
+    <check id="209" parent="143" name="MAX_MYSZY_NN">
       <ModifiedTimestamp>2018-05-25.00:50:49</ModifiedTimestamp>
       <ColNames>MAX_MYSZY</ColNames>
       <Predicate>&quot;MAX_MYSZY&quot; IS NOT NULL</Predicate>
     </check>
-    <column id="206" parent="144" name="NAZWA_GRATYFIKACJI">
+    <column id="210" parent="144" name="NAZWA_GRATYFIKACJI">
       <Position>1</Position>
       <DataType>VARCHAR2(32 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="207" parent="144" name="SILA_GRATYFIKACJI">
+    <column id="211" parent="144" name="SILA_GRATYFIKACJI">
       <Position>2</Position>
       <DataType>NUMBER(2 digit)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="208" parent="144" name="G_NAZWA_GRATYFIKACJI_PK">
+    <index id="212" parent="144" name="G_NAZWA_GRATYFIKACJI_PK">
       <ObjectId>357708</ObjectId>
       <CreatedTimestamp>2018-05-25.00:43:08</CreatedTimestamp>
       <ModifiedTimestamp>2018-05-25.00:43:08</ModifiedTimestamp>
@@ -851,51 +880,51 @@ DATA_WYDANIA</ColNames>
       <ColNames>NAZWA_GRATYFIKACJI</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="209" parent="144" name="G_NAZWA_GRATYFIKACJI_PK">
+    <key id="213" parent="144" name="G_NAZWA_GRATYFIKACJI_PK">
       <ModifiedTimestamp>2018-05-25.00:43:08</ModifiedTimestamp>
       <ColNames>NAZWA_GRATYFIKACJI</ColNames>
       <InitiallyDeferred>1</InitiallyDeferred>
       <UnderlyingIndexName>G_NAZWA_GRATYFIKACJI_PK</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <check id="210" parent="144" name="G_NAZWA_GRATYFIKACJI_NN">
+    <check id="214" parent="144" name="G_NAZWA_GRATYFIKACJI_NN">
       <ModifiedTimestamp>2018-05-25.00:43:08</ModifiedTimestamp>
       <ColNames>NAZWA_GRATYFIKACJI</ColNames>
       <Predicate>&quot;NAZWA_GRATYFIKACJI&quot; IS NOT NULL</Predicate>
     </check>
-    <check id="211" parent="144" name="G_SILA_GRATYFIKACJI_NN">
+    <check id="215" parent="144" name="G_SILA_GRATYFIKACJI_NN">
       <ModifiedTimestamp>2018-05-25.00:43:08</ModifiedTimestamp>
       <ColNames>SILA_GRATYFIKACJI</ColNames>
       <Predicate>&quot;SILA_GRATYFIKACJI&quot; IS NOT NULL</Predicate>
     </check>
-    <column id="212" parent="145" name="IMIE_WROGA">
+    <column id="216" parent="145" name="IMIE_WROGA">
       <Position>1</Position>
       <DataType>VARCHAR2(32 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="213" parent="145" name="NAZWA_GRATYFIKACJI">
+    <column id="217" parent="145" name="NAZWA_GRATYFIKACJI">
       <Position>2</Position>
       <DataType>VARCHAR2(32 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="214" parent="145" name="GRATYFIKACJE_WROGOW_PK">
-      <ObjectId>357725</ObjectId>
-      <CreatedTimestamp>2018-05-25.00:50:50</CreatedTimestamp>
-      <ModifiedTimestamp>2018-05-25.00:50:50</ModifiedTimestamp>
+    <index id="218" parent="145" name="GRATYFIKACJE_WROGOW_PK">
+      <ObjectId>358442</ObjectId>
+      <CreatedTimestamp>2018-05-26.19:52:50</CreatedTimestamp>
+      <ModifiedTimestamp>2018-05-26.19:52:50</ModifiedTimestamp>
       <TablespaceName>USERS</TablespaceName>
       <ColNames>IMIE_WROGA
 NAZWA_GRATYFIKACJI</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="215" parent="145" name="GRATYFIKACJE_WROGOW_PK">
-      <ModifiedTimestamp>2018-05-25.00:50:50</ModifiedTimestamp>
+    <key id="219" parent="145" name="GRATYFIKACJE_WROGOW_PK">
+      <ModifiedTimestamp>2018-05-26.19:52:50</ModifiedTimestamp>
       <ColNames>IMIE_WROGA
 NAZWA_GRATYFIKACJI</ColNames>
       <InitiallyDeferred>1</InitiallyDeferred>
       <UnderlyingIndexName>GRATYFIKACJE_WROGOW_PK</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="216" parent="145" name="GW_IMIE_WROGA_FK">
+    <foreign-key id="220" parent="145" name="GW_IMIE_WROGA_FK">
       <ModifiedTimestamp>2018-05-25.00:50:50</ModifiedTimestamp>
       <ColNames>IMIE_WROGA</ColNames>
       <RefSchemaName>C##239266</RefSchemaName>
@@ -903,35 +932,35 @@ NAZWA_GRATYFIKACJI</ColNames>
       <RefKeyName>W_IMIE_WROGA_PK</RefKeyName>
       <OnDelete>restrict</OnDelete>
     </foreign-key>
-    <foreign-key id="217" parent="145" name="GW_NAZWA_GRATYFIKACJI_FK">
-      <ModifiedTimestamp>2018-05-25.00:50:50</ModifiedTimestamp>
+    <foreign-key id="221" parent="145" name="GW_NAZWA_GRATYFIKACJI_FK">
+      <ModifiedTimestamp>2018-05-26.19:52:50</ModifiedTimestamp>
       <ColNames>NAZWA_GRATYFIKACJI</ColNames>
       <RefSchemaName>C##239266</RefSchemaName>
       <RefTableName>GRATYFIKACJE</RefTableName>
       <RefKeyName>G_NAZWA_GRATYFIKACJI_PK</RefKeyName>
       <OnDelete>restrict</OnDelete>
     </foreign-key>
-    <column id="218" parent="146" name="PSEUDO_KOTA">
+    <column id="222" parent="146" name="PSEUDO_KOTA">
       <Position>1</Position>
       <DataType>VARCHAR2(32 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="219" parent="146" name="IMIE_WROGA">
+    <column id="223" parent="146" name="IMIE_WROGA">
       <Position>2</Position>
       <DataType>VARCHAR2(32 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="220" parent="146" name="DATA">
+    <column id="224" parent="146" name="DATA">
       <Position>3</Position>
       <DataType>DATE|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="221" parent="146" name="OPIS">
+    <column id="225" parent="146" name="OPIS">
       <Position>4</Position>
-      <DataType>VARCHAR2(32 byte)|0s</DataType>
+      <DataType>VARCHAR2(200 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="222" parent="146" name="INCYDENTY_PK">
+    <index id="226" parent="146" name="INCYDENTY_PK">
       <ObjectId>357723</ObjectId>
       <CreatedTimestamp>2018-05-25.00:50:50</CreatedTimestamp>
       <ModifiedTimestamp>2018-05-25.00:50:50</ModifiedTimestamp>
@@ -940,7 +969,7 @@ NAZWA_GRATYFIKACJI</ColNames>
 IMIE_WROGA</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="223" parent="146" name="INCYDENTY_PK">
+    <key id="227" parent="146" name="INCYDENTY_PK">
       <ModifiedTimestamp>2018-05-25.00:50:50</ModifiedTimestamp>
       <ColNames>PSEUDO_KOTA
 IMIE_WROGA</ColNames>
@@ -948,7 +977,7 @@ IMIE_WROGA</ColNames>
       <UnderlyingIndexName>INCYDENTY_PK</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="224" parent="146" name="I_PSEUDO_KOTA_FK">
+    <foreign-key id="228" parent="146" name="I_PSEUDO_KOTA_FK">
       <ModifiedTimestamp>2018-05-25.00:50:50</ModifiedTimestamp>
       <ColNames>PSEUDO_KOTA</ColNames>
       <RefSchemaName>C##239266</RefSchemaName>
@@ -956,7 +985,7 @@ IMIE_WROGA</ColNames>
       <RefKeyName>K_PSEUDO_KOTA_PK</RefKeyName>
       <OnDelete>restrict</OnDelete>
     </foreign-key>
-    <foreign-key id="225" parent="146" name="I_IMIE_WROGA_FK">
+    <foreign-key id="229" parent="146" name="I_IMIE_WROGA_FK">
       <ModifiedTimestamp>2018-05-25.00:50:50</ModifiedTimestamp>
       <ColNames>IMIE_WROGA</ColNames>
       <RefSchemaName>C##239266</RefSchemaName>
@@ -964,22 +993,22 @@ IMIE_WROGA</ColNames>
       <RefKeyName>W_IMIE_WROGA_PK</RefKeyName>
       <OnDelete>restrict</OnDelete>
     </foreign-key>
-    <check id="226" parent="146" name="DATA_NN">
+    <check id="230" parent="146" name="DATA_NN">
       <ModifiedTimestamp>2018-05-25.00:50:50</ModifiedTimestamp>
       <ColNames>DATA</ColNames>
       <Predicate>&quot;DATA&quot; IS NOT NULL</Predicate>
     </check>
-    <check id="227" parent="146" name="OPIS_NN">
+    <check id="231" parent="146" name="OPIS_NN">
       <ModifiedTimestamp>2018-05-25.00:50:50</ModifiedTimestamp>
       <ColNames>OPIS</ColNames>
       <Predicate>&quot;OPIS&quot; IS NOT NULL</Predicate>
     </check>
-    <column id="228" parent="147" name="JEZYK_OBCY">
+    <column id="232" parent="147" name="JEZYK_OBCY">
       <Position>1</Position>
       <DataType>VARCHAR2(20 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="229" parent="147" name="JEZYK_OBCY_PK">
+    <index id="233" parent="147" name="JEZYK_OBCY_PK">
       <ObjectId>343841</ObjectId>
       <CreatedTimestamp>2018-03-24.20:51:33</CreatedTimestamp>
       <ModifiedTimestamp>2018-03-24.20:51:33</ModifiedTimestamp>
@@ -987,34 +1016,34 @@ IMIE_WROGA</ColNames>
       <ColNames>JEZYK_OBCY</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="230" parent="147" name="JEZYK_OBCY_PK">
+    <key id="234" parent="147" name="JEZYK_OBCY_PK">
       <ModifiedTimestamp>2018-03-24.20:51:33</ModifiedTimestamp>
       <ColNames>JEZYK_OBCY</ColNames>
       <InitiallyDeferred>1</InitiallyDeferred>
       <UnderlyingIndexName>JEZYK_OBCY_PK</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <check id="231" parent="147" name="JO_JEZYK_OBCY_NN">
+    <check id="235" parent="147" name="JO_JEZYK_OBCY_NN">
       <ModifiedTimestamp>2018-03-24.20:51:33</ModifiedTimestamp>
       <ColNames>JEZYK_OBCY</ColNames>
       <Predicate>&quot;JEZYK_OBCY&quot; IS NOT NULL</Predicate>
     </check>
-    <column id="232" parent="148" name="PSEUDO_WAMPIRA">
+    <column id="236" parent="148" name="PSEUDO_WAMPIRA">
       <Position>1</Position>
       <DataType>VARCHAR2(15 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="233" parent="148" name="JEZYK_OBCY">
+    <column id="237" parent="148" name="JEZYK_OBCY">
       <Position>2</Position>
       <DataType>VARCHAR2(20 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="234" parent="148" name="JEZYK_OBCY_OD">
+    <column id="238" parent="148" name="JEZYK_OBCY_OD">
       <Position>3</Position>
       <DataType>DATE|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="235" parent="148" name="JOW_PK">
+    <index id="239" parent="148" name="JOW_PK">
       <ObjectId>343843</ObjectId>
       <CreatedTimestamp>2018-03-24.20:51:33</CreatedTimestamp>
       <ModifiedTimestamp>2018-03-24.20:51:33</ModifiedTimestamp>
@@ -1023,7 +1052,7 @@ IMIE_WROGA</ColNames>
 JEZYK_OBCY</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="236" parent="148" name="JOW_PK">
+    <key id="240" parent="148" name="JOW_PK">
       <ModifiedTimestamp>2018-03-24.20:51:33</ModifiedTimestamp>
       <ColNames>PSEUDO_WAMPIRA
 JEZYK_OBCY</ColNames>
@@ -1031,7 +1060,7 @@ JEZYK_OBCY</ColNames>
       <UnderlyingIndexName>JOW_PK</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="237" parent="148" name="JOW_PSEUDO_WAMPIRA_FK">
+    <foreign-key id="241" parent="148" name="JOW_PSEUDO_WAMPIRA_FK">
       <ModifiedTimestamp>2018-03-24.20:51:33</ModifiedTimestamp>
       <ColNames>PSEUDO_WAMPIRA</ColNames>
       <RefSchemaName>C##239266</RefSchemaName>
@@ -1039,7 +1068,7 @@ JEZYK_OBCY</ColNames>
       <RefKeyName>PSEUDO_WAMPIRA_PK</RefKeyName>
       <OnDelete>restrict</OnDelete>
     </foreign-key>
-    <foreign-key id="238" parent="148" name="JOW_JEZYK_OBCY_FK">
+    <foreign-key id="242" parent="148" name="JOW_JEZYK_OBCY_FK">
       <ModifiedTimestamp>2018-03-24.20:51:33</ModifiedTimestamp>
       <ColNames>JEZYK_OBCY</ColNames>
       <RefSchemaName>C##239266</RefSchemaName>
@@ -1047,54 +1076,54 @@ JEZYK_OBCY</ColNames>
       <RefKeyName>JEZYK_OBCY_PK</RefKeyName>
       <OnDelete>restrict</OnDelete>
     </foreign-key>
-    <check id="239" parent="148" name="JOW_PSEUDO_WAMPIRA_NN">
+    <check id="243" parent="148" name="JOW_PSEUDO_WAMPIRA_NN">
       <ModifiedTimestamp>2018-03-24.20:51:33</ModifiedTimestamp>
       <ColNames>PSEUDO_WAMPIRA</ColNames>
       <Predicate>&quot;PSEUDO_WAMPIRA&quot; IS NOT NULL</Predicate>
     </check>
-    <check id="240" parent="148" name="JOW_JEZYK_OBCY_NN">
+    <check id="244" parent="148" name="JOW_JEZYK_OBCY_NN">
       <ModifiedTimestamp>2018-03-24.20:51:33</ModifiedTimestamp>
       <ColNames>JEZYK_OBCY</ColNames>
       <Predicate>&quot;JEZYK_OBCY&quot; IS NOT NULL</Predicate>
     </check>
-    <check id="241" parent="148" name="JOW_JEZYK_OBCY_OD_NN">
+    <check id="245" parent="148" name="JOW_JEZYK_OBCY_OD_NN">
       <ModifiedTimestamp>2018-03-24.20:51:33</ModifiedTimestamp>
       <ColNames>JEZYK_OBCY_OD</ColNames>
       <Predicate>&quot;JEZYK_OBCY_OD&quot; IS NOT NULL</Predicate>
     </check>
-    <column id="242" parent="149" name="PSEUDO_KOTA">
+    <column id="246" parent="149" name="PSEUDO_KOTA">
       <Position>1</Position>
       <DataType>VARCHAR2(32 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="243" parent="149" name="PLEC_KOTA">
+    <column id="247" parent="149" name="PLEC_KOTA">
       <Position>2</Position>
       <DataType>CHAR(1 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="244" parent="149" name="DATA_PRZYJECIA">
+    <column id="248" parent="149" name="DATA_PRZYJECIA">
       <Position>3</Position>
       <DataType>DATE|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="245" parent="149" name="PRZYDZIAL_MYSZY">
+    <column id="249" parent="149" name="PRZYDZIAL_MYSZY">
       <Position>4</Position>
       <DataType>NUMBER(3 digit)|0s</DataType>
     </column>
-    <column id="246" parent="149" name="PSEUDO_SZEFA">
+    <column id="250" parent="149" name="PSEUDO_SZEFA">
       <Position>5</Position>
       <DataType>VARCHAR2(32 byte)|0s</DataType>
     </column>
-    <column id="247" parent="149" name="NUMER_BANDY">
+    <column id="251" parent="149" name="NUMER_BANDY">
       <Position>6</Position>
       <DataType>NUMBER(3 digit)|0s</DataType>
     </column>
-    <column id="248" parent="149" name="NAZWA_FUNKCJI">
+    <column id="252" parent="149" name="NAZWA_FUNKCJI">
       <Position>7</Position>
       <DataType>VARCHAR2(32 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="249" parent="149" name="K_PSEUDO_KOTA_PK">
+    <index id="253" parent="149" name="K_PSEUDO_KOTA_PK">
       <ObjectId>357715</ObjectId>
       <CreatedTimestamp>2018-05-25.00:50:49</CreatedTimestamp>
       <ModifiedTimestamp>2018-05-25.00:50:49</ModifiedTimestamp>
@@ -1102,14 +1131,14 @@ JEZYK_OBCY</ColNames>
       <ColNames>PSEUDO_KOTA</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="250" parent="149" name="K_PSEUDO_KOTA_PK">
+    <key id="254" parent="149" name="K_PSEUDO_KOTA_PK">
       <ModifiedTimestamp>2018-05-25.00:50:49</ModifiedTimestamp>
       <ColNames>PSEUDO_KOTA</ColNames>
       <InitiallyDeferred>1</InitiallyDeferred>
       <UnderlyingIndexName>K_PSEUDO_KOTA_PK</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="251" parent="149" name="K_PSEUDO_SZEFA_FK">
+    <foreign-key id="255" parent="149" name="K_PSEUDO_SZEFA_FK">
       <ModifiedTimestamp>2018-05-25.00:50:49</ModifiedTimestamp>
       <ColNames>PSEUDO_SZEFA</ColNames>
       <RefSchemaName>C##239266</RefSchemaName>
@@ -1117,7 +1146,7 @@ JEZYK_OBCY</ColNames>
       <RefKeyName>K_PSEUDO_KOTA_PK</RefKeyName>
       <OnDelete>restrict</OnDelete>
     </foreign-key>
-    <foreign-key id="252" parent="149" name="K_NUMER_BANDY_FK">
+    <foreign-key id="256" parent="149" name="K_NUMER_BANDY_FK">
       <ModifiedTimestamp>2018-05-25.00:50:49</ModifiedTimestamp>
       <ColNames>NUMER_BANDY</ColNames>
       <RefSchemaName>C##239266</RefSchemaName>
@@ -1125,7 +1154,7 @@ JEZYK_OBCY</ColNames>
       <RefKeyName>B_NUMER_BANDY_PK</RefKeyName>
       <OnDelete>restrict</OnDelete>
     </foreign-key>
-    <foreign-key id="253" parent="149" name="K_NAZWA_FUNKCJI_FK">
+    <foreign-key id="257" parent="149" name="K_NAZWA_FUNKCJI_FK">
       <ModifiedTimestamp>2018-05-25.00:50:49</ModifiedTimestamp>
       <ColNames>NAZWA_FUNKCJI</ColNames>
       <RefSchemaName>C##239266</RefSchemaName>
@@ -1133,71 +1162,71 @@ JEZYK_OBCY</ColNames>
       <RefKeyName>F_NAZWA_FUNCKJI_PK</RefKeyName>
       <OnDelete>restrict</OnDelete>
     </foreign-key>
-    <check id="254" parent="149" name="K_PSEUDO_KOTA_NN">
+    <check id="258" parent="149" name="K_PSEUDO_KOTA_NN">
       <ModifiedTimestamp>2018-05-25.00:50:49</ModifiedTimestamp>
       <ColNames>PSEUDO_KOTA</ColNames>
       <Predicate>&quot;PSEUDO_KOTA&quot; IS NOT NULL</Predicate>
     </check>
-    <check id="255" parent="149" name="K_PLEC_KOTA_CH">
+    <check id="259" parent="149" name="K_PLEC_KOTA_CH">
       <ModifiedTimestamp>2018-05-25.00:50:49</ModifiedTimestamp>
       <ColNames>PLEC_KOTA</ColNames>
       <Predicate>plec_kota in&#xd;
                                                                                                    (&apos;K&apos;, &apos;M&apos;)</Predicate>
     </check>
-    <check id="256" parent="149" name="K_PLEC_KOTA_NN">
+    <check id="260" parent="149" name="K_PLEC_KOTA_NN">
       <ModifiedTimestamp>2018-05-25.00:50:49</ModifiedTimestamp>
       <ColNames>PLEC_KOTA</ColNames>
       <Predicate>&quot;PLEC_KOTA&quot; IS NOT NULL</Predicate>
     </check>
-    <check id="257" parent="149" name="K_DATA_PRZYJECIA">
+    <check id="261" parent="149" name="K_DATA_PRZYJECIA">
       <ModifiedTimestamp>2018-05-25.00:50:49</ModifiedTimestamp>
       <ColNames>DATA_PRZYJECIA</ColNames>
       <Predicate>&quot;DATA_PRZYJECIA&quot; IS NOT NULL</Predicate>
     </check>
-    <check id="258" parent="149" name="K_PRZYDZIAL_MYSZY_CH">
+    <check id="262" parent="149" name="K_PRZYDZIAL_MYSZY_CH">
       <ModifiedTimestamp>2018-05-25.00:50:49</ModifiedTimestamp>
       <ColNames>PRZYDZIAL_MYSZY</ColNames>
       <Predicate>przydzial_myszy &gt; -1</Predicate>
     </check>
-    <check id="259" parent="149" name="K_NAZWA_FUNKCJI_NN">
+    <check id="263" parent="149" name="K_NAZWA_FUNKCJI_NN">
       <ModifiedTimestamp>2018-05-25.00:50:49</ModifiedTimestamp>
       <ColNames>NAZWA_FUNKCJI</ColNames>
       <Predicate>&quot;NAZWA_FUNKCJI&quot; IS NOT NULL</Predicate>
     </check>
-    <column id="260" parent="150" name="NUMER_MYSZY">
+    <column id="264" parent="150" name="NUMER_MYSZY">
       <Position>1</Position>
       <DataType>NUMBER(*)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="261" parent="150" name="DATA_UPOLOWANIA">
+    <column id="265" parent="150" name="DATA_UPOLOWANIA">
       <Position>2</Position>
       <DataType>DATE|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="262" parent="150" name="WAGA">
+    <column id="266" parent="150" name="WAGA">
       <Position>3</Position>
       <DataType>NUMBER(2 digit)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="263" parent="150" name="DLUGOSC">
+    <column id="267" parent="150" name="DLUGOSC">
       <Position>4</Position>
       <DataType>NUMBER(2 digit)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="264" parent="150" name="DATA_WYDANIA">
+    <column id="268" parent="150" name="DATA_WYDANIA">
       <Position>5</Position>
       <DataType>DATE|0s</DataType>
     </column>
-    <column id="265" parent="150" name="PSEUDO_LOWCY">
+    <column id="269" parent="150" name="PSEUDO_LOWCY">
       <Position>6</Position>
       <DataType>VARCHAR2(32 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="266" parent="150" name="PSEUDO_ZJADACZA">
+    <column id="270" parent="150" name="PSEUDO_ZJADACZA">
       <Position>7</Position>
       <DataType>VARCHAR2(32 byte)|0s</DataType>
     </column>
-    <index id="267" parent="150" name="N_NUMER_MYSZY_PK">
+    <index id="271" parent="150" name="N_NUMER_MYSZY_PK">
       <ObjectId>357717</ObjectId>
       <CreatedTimestamp>2018-05-25.00:50:50</CreatedTimestamp>
       <ModifiedTimestamp>2018-05-25.00:50:50</ModifiedTimestamp>
@@ -1205,14 +1234,14 @@ JEZYK_OBCY</ColNames>
       <ColNames>NUMER_MYSZY</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="268" parent="150" name="N_NUMER_MYSZY_PK">
+    <key id="272" parent="150" name="N_NUMER_MYSZY_PK">
       <ModifiedTimestamp>2018-05-25.00:50:50</ModifiedTimestamp>
       <ColNames>NUMER_MYSZY</ColNames>
       <InitiallyDeferred>1</InitiallyDeferred>
       <UnderlyingIndexName>N_NUMER_MYSZY_PK</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="269" parent="150" name="M_PSEUDO_LOWCY_FK">
+    <foreign-key id="273" parent="150" name="M_PSEUDO_LOWCY_FK">
       <ModifiedTimestamp>2018-05-25.00:50:50</ModifiedTimestamp>
       <ColNames>PSEUDO_LOWCY</ColNames>
       <RefSchemaName>C##239266</RefSchemaName>
@@ -1220,7 +1249,7 @@ JEZYK_OBCY</ColNames>
       <RefKeyName>K_PSEUDO_KOTA_PK</RefKeyName>
       <OnDelete>restrict</OnDelete>
     </foreign-key>
-    <foreign-key id="270" parent="150" name="M_PSEUDO_ZJADACZA_FK">
+    <foreign-key id="274" parent="150" name="M_PSEUDO_ZJADACZA_FK">
       <ModifiedTimestamp>2018-05-25.00:50:50</ModifiedTimestamp>
       <ColNames>PSEUDO_ZJADACZA</ColNames>
       <RefSchemaName>C##239266</RefSchemaName>
@@ -1228,47 +1257,53 @@ JEZYK_OBCY</ColNames>
       <RefKeyName>K_PSEUDO_KOTA_PK</RefKeyName>
       <OnDelete>restrict</OnDelete>
     </foreign-key>
-    <check id="271" parent="150" name="M_NUMER_MYSZY_NN">
+    <check id="275" parent="150" name="M_NUMER_MYSZY_NN">
       <ModifiedTimestamp>2018-05-25.00:50:50</ModifiedTimestamp>
       <ColNames>NUMER_MYSZY</ColNames>
       <Predicate>&quot;NUMER_MYSZY&quot; IS NOT NULL</Predicate>
     </check>
-    <check id="272" parent="150" name="M_DATA_UPOLOWANIA_NN">
+    <check id="276" parent="150" name="M_DATY">
+      <ModifiedTimestamp>2018-05-26.21:39:17</ModifiedTimestamp>
+      <ColNames>DATA_UPOLOWANIA
+DATA_WYDANIA</ColNames>
+      <Predicate>data_upolowania &lt; data_wydania</Predicate>
+    </check>
+    <check id="277" parent="150" name="M_DATA_UPOLOWANIA_NN">
       <ModifiedTimestamp>2018-05-25.00:50:50</ModifiedTimestamp>
       <ColNames>DATA_UPOLOWANIA</ColNames>
       <Predicate>&quot;DATA_UPOLOWANIA&quot; IS NOT NULL</Predicate>
     </check>
-    <check id="273" parent="150" name="M_WAGA_CH">
+    <check id="278" parent="150" name="M_WAGA_CH">
       <ModifiedTimestamp>2018-05-26.00:21:38</ModifiedTimestamp>
       <ColNames>WAGA</ColNames>
       <Predicate>waga &gt; 9</Predicate>
     </check>
-    <check id="274" parent="150" name="M_WAGA_NN">
+    <check id="279" parent="150" name="M_WAGA_NN">
       <ModifiedTimestamp>2018-05-25.00:50:50</ModifiedTimestamp>
       <ColNames>WAGA</ColNames>
       <Predicate>&quot;WAGA&quot; IS NOT NULL</Predicate>
     </check>
-    <check id="275" parent="150" name="M_DLUGOSC_CH">
+    <check id="280" parent="150" name="M_DLUGOSC_CH">
       <ModifiedTimestamp>2018-05-26.00:21:38</ModifiedTimestamp>
       <ColNames>DLUGOSC</ColNames>
       <Predicate>dlugosc &gt; 4</Predicate>
     </check>
-    <check id="276" parent="150" name="M_DLUGOSC_NN">
+    <check id="281" parent="150" name="M_DLUGOSC_NN">
       <ModifiedTimestamp>2018-05-25.00:50:50</ModifiedTimestamp>
       <ColNames>DLUGOSC</ColNames>
       <Predicate>&quot;DLUGOSC&quot; IS NOT NULL</Predicate>
     </check>
-    <check id="277" parent="150" name="M_PSEUDO_LOWCY_NN">
+    <check id="282" parent="150" name="M_PSEUDO_LOWCY_NN">
       <ModifiedTimestamp>2018-05-25.00:50:50</ModifiedTimestamp>
       <ColNames>PSEUDO_LOWCY</ColNames>
       <Predicate>&quot;PSEUDO_LOWCY&quot; IS NOT NULL</Predicate>
     </check>
-    <column id="278" parent="151" name="SPRAWNOSC">
+    <column id="283" parent="151" name="SPRAWNOSC">
       <Position>1</Position>
       <DataType>VARCHAR2(20 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="279" parent="151" name="SPRAWNOSC_PK">
+    <index id="284" parent="151" name="SPRAWNOSC_PK">
       <ObjectId>343837</ObjectId>
       <CreatedTimestamp>2018-03-24.20:51:33</CreatedTimestamp>
       <ModifiedTimestamp>2018-03-24.20:51:33</ModifiedTimestamp>
@@ -1276,34 +1311,34 @@ JEZYK_OBCY</ColNames>
       <ColNames>SPRAWNOSC</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="280" parent="151" name="SPRAWNOSC_PK">
+    <key id="285" parent="151" name="SPRAWNOSC_PK">
       <ModifiedTimestamp>2018-03-24.20:51:33</ModifiedTimestamp>
       <ColNames>SPRAWNOSC</ColNames>
       <InitiallyDeferred>1</InitiallyDeferred>
       <UnderlyingIndexName>SPRAWNOSC_PK</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <check id="281" parent="151" name="S_SPRAWNOSC_NN">
+    <check id="286" parent="151" name="S_SPRAWNOSC_NN">
       <ModifiedTimestamp>2018-03-24.20:51:33</ModifiedTimestamp>
       <ColNames>SPRAWNOSC</ColNames>
       <Predicate>&quot;SPRAWNOSC&quot; IS NOT NULL</Predicate>
     </check>
-    <column id="282" parent="152" name="PSEUDO_WAMPIRA">
+    <column id="287" parent="152" name="PSEUDO_WAMPIRA">
       <Position>1</Position>
       <DataType>VARCHAR2(15 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="283" parent="152" name="SPRAWNOSC">
+    <column id="288" parent="152" name="SPRAWNOSC">
       <Position>2</Position>
       <DataType>VARCHAR2(20 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="284" parent="152" name="SPRAWNOSC_OD">
+    <column id="289" parent="152" name="SPRAWNOSC_OD">
       <Position>3</Position>
       <DataType>DATE|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="285" parent="152" name="SPRAWNOSCI_W_PK">
+    <index id="290" parent="152" name="SPRAWNOSCI_W_PK">
       <ObjectId>343839</ObjectId>
       <CreatedTimestamp>2018-03-24.20:51:33</CreatedTimestamp>
       <ModifiedTimestamp>2018-03-24.20:51:33</ModifiedTimestamp>
@@ -1312,7 +1347,7 @@ JEZYK_OBCY</ColNames>
 SPRAWNOSC</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="286" parent="152" name="SPRAWNOSCI_W_PK">
+    <key id="291" parent="152" name="SPRAWNOSCI_W_PK">
       <ModifiedTimestamp>2018-03-24.20:51:33</ModifiedTimestamp>
       <ColNames>PSEUDO_WAMPIRA
 SPRAWNOSC</ColNames>
@@ -1320,7 +1355,7 @@ SPRAWNOSC</ColNames>
       <UnderlyingIndexName>SPRAWNOSCI_W_PK</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="287" parent="152" name="SP_PSEUDO_WAMPIRA_FK">
+    <foreign-key id="292" parent="152" name="SP_PSEUDO_WAMPIRA_FK">
       <ModifiedTimestamp>2018-03-24.20:51:33</ModifiedTimestamp>
       <ColNames>PSEUDO_WAMPIRA</ColNames>
       <RefSchemaName>C##239266</RefSchemaName>
@@ -1328,7 +1363,7 @@ SPRAWNOSC</ColNames>
       <RefKeyName>PSEUDO_WAMPIRA_PK</RefKeyName>
       <OnDelete>restrict</OnDelete>
     </foreign-key>
-    <foreign-key id="288" parent="152" name="SP_SPRAWNOSC_FK">
+    <foreign-key id="293" parent="152" name="SP_SPRAWNOSC_FK">
       <ModifiedTimestamp>2018-03-24.20:51:33</ModifiedTimestamp>
       <ColNames>SPRAWNOSC</ColNames>
       <RefSchemaName>C##239266</RefSchemaName>
@@ -1336,27 +1371,27 @@ SPRAWNOSC</ColNames>
       <RefKeyName>SPRAWNOSC_PK</RefKeyName>
       <OnDelete>restrict</OnDelete>
     </foreign-key>
-    <check id="289" parent="152" name="SP_PSEUDO_WAMPIRA_NN">
+    <check id="294" parent="152" name="SP_PSEUDO_WAMPIRA_NN">
       <ModifiedTimestamp>2018-03-24.20:51:33</ModifiedTimestamp>
       <ColNames>PSEUDO_WAMPIRA</ColNames>
       <Predicate>&quot;PSEUDO_WAMPIRA&quot; IS NOT NULL</Predicate>
     </check>
-    <check id="290" parent="152" name="SP_SPRAWNOSC_NN">
+    <check id="295" parent="152" name="SP_SPRAWNOSC_NN">
       <ModifiedTimestamp>2018-03-24.20:51:33</ModifiedTimestamp>
       <ColNames>SPRAWNOSC</ColNames>
       <Predicate>&quot;SPRAWNOSC&quot; IS NOT NULL</Predicate>
     </check>
-    <check id="291" parent="152" name="SP_SPRAWNOSC_OD_NN">
+    <check id="296" parent="152" name="SP_SPRAWNOSC_OD_NN">
       <ModifiedTimestamp>2018-03-24.20:51:33</ModifiedTimestamp>
       <ColNames>SPRAWNOSC_OD</ColNames>
       <Predicate>&quot;SPRAWNOSC_OD&quot; IS NOT NULL</Predicate>
     </check>
-    <column id="292" parent="153" name="NAZWA_TERENU">
+    <column id="297" parent="153" name="NAZWA_TERENU">
       <Position>1</Position>
       <DataType>VARCHAR2(32 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="293" parent="153" name="T_NAZWA_TERENU_PK">
+    <index id="298" parent="153" name="T_NAZWA_TERENU_PK">
       <ObjectId>357721</ObjectId>
       <CreatedTimestamp>2018-05-25.00:50:50</CreatedTimestamp>
       <ModifiedTimestamp>2018-05-25.00:50:50</ModifiedTimestamp>
@@ -1364,29 +1399,29 @@ SPRAWNOSC</ColNames>
       <ColNames>NAZWA_TERENU</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="294" parent="153" name="T_NAZWA_TERENU_PK">
+    <key id="299" parent="153" name="T_NAZWA_TERENU_PK">
       <ModifiedTimestamp>2018-05-25.00:50:50</ModifiedTimestamp>
       <ColNames>NAZWA_TERENU</ColNames>
       <InitiallyDeferred>1</InitiallyDeferred>
       <UnderlyingIndexName>T_NAZWA_TERENU_PK</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <check id="295" parent="153" name="T_NAZWA_TERENU_NN">
+    <check id="300" parent="153" name="T_NAZWA_TERENU_NN">
       <ModifiedTimestamp>2018-05-25.00:50:50</ModifiedTimestamp>
       <ColNames>NAZWA_TERENU</ColNames>
       <Predicate>&quot;NAZWA_TERENU&quot; IS NOT NULL</Predicate>
     </check>
-    <column id="296" parent="154" name="NAZWA_TERENU">
+    <column id="301" parent="154" name="NAZWA_TERENU">
       <Position>1</Position>
       <DataType>VARCHAR2(32 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="297" parent="154" name="NUMER_BANDY">
+    <column id="302" parent="154" name="NUMER_BANDY">
       <Position>2</Position>
       <DataType>NUMBER(3 digit)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="298" parent="154" name="TERENY_BANDY_PK">
+    <index id="303" parent="154" name="TERENY_BANDY_PK">
       <ObjectId>357727</ObjectId>
       <CreatedTimestamp>2018-05-25.00:50:50</CreatedTimestamp>
       <ModifiedTimestamp>2018-05-25.00:50:50</ModifiedTimestamp>
@@ -1395,7 +1430,7 @@ SPRAWNOSC</ColNames>
 NUMER_BANDY</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="299" parent="154" name="TERENY_BANDY_PK">
+    <key id="304" parent="154" name="TERENY_BANDY_PK">
       <ModifiedTimestamp>2018-05-25.00:50:50</ModifiedTimestamp>
       <ColNames>NAZWA_TERENU
 NUMER_BANDY</ColNames>
@@ -1403,7 +1438,7 @@ NUMER_BANDY</ColNames>
       <UnderlyingIndexName>TERENY_BANDY_PK</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="300" parent="154" name="TB_NAZWA_TERENU_FK">
+    <foreign-key id="305" parent="154" name="TB_NAZWA_TERENU_FK">
       <ModifiedTimestamp>2018-05-25.00:50:50</ModifiedTimestamp>
       <ColNames>NAZWA_TERENU</ColNames>
       <RefSchemaName>C##239266</RefSchemaName>
@@ -1411,7 +1446,7 @@ NUMER_BANDY</ColNames>
       <RefKeyName>T_NAZWA_TERENU_PK</RefKeyName>
       <OnDelete>restrict</OnDelete>
     </foreign-key>
-    <foreign-key id="301" parent="154" name="TB_NUMER_BANDY_FK">
+    <foreign-key id="306" parent="154" name="TB_NUMER_BANDY_FK">
       <ModifiedTimestamp>2018-05-25.00:50:50</ModifiedTimestamp>
       <ColNames>NUMER_BANDY</ColNames>
       <RefSchemaName>C##239266</RefSchemaName>
@@ -1419,26 +1454,26 @@ NUMER_BANDY</ColNames>
       <RefKeyName>B_NUMER_BANDY_PK</RefKeyName>
       <OnDelete>restrict</OnDelete>
     </foreign-key>
-    <column id="302" parent="155" name="PSEUDO_WAMPIRA">
+    <column id="307" parent="155" name="PSEUDO_WAMPIRA">
       <Position>1</Position>
       <DataType>VARCHAR2(15 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="303" parent="155" name="WAMPIR_W_RODZINIE">
+    <column id="308" parent="155" name="WAMPIR_W_RODZINIE">
       <Position>2</Position>
       <DataType>DATE|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="304" parent="155" name="PLEC_WAMPIRA">
+    <column id="309" parent="155" name="PLEC_WAMPIRA">
       <Position>3</Position>
       <DataType>CHAR(1 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="305" parent="155" name="PSEUDO_SZEFA">
+    <column id="310" parent="155" name="PSEUDO_SZEFA">
       <Position>4</Position>
       <DataType>VARCHAR2(15 byte)|0s</DataType>
     </column>
-    <index id="306" parent="155" name="PSEUDO_WAMPIRA_PK">
+    <index id="311" parent="155" name="PSEUDO_WAMPIRA_PK">
       <ObjectId>343829</ObjectId>
       <CreatedTimestamp>2018-03-24.20:51:33</CreatedTimestamp>
       <ModifiedTimestamp>2018-03-24.20:51:33</ModifiedTimestamp>
@@ -1446,14 +1481,14 @@ NUMER_BANDY</ColNames>
       <ColNames>PSEUDO_WAMPIRA</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="307" parent="155" name="PSEUDO_WAMPIRA_PK">
+    <key id="312" parent="155" name="PSEUDO_WAMPIRA_PK">
       <ModifiedTimestamp>2018-03-24.20:51:33</ModifiedTimestamp>
       <ColNames>PSEUDO_WAMPIRA</ColNames>
       <InitiallyDeferred>1</InitiallyDeferred>
       <UnderlyingIndexName>PSEUDO_WAMPIRA_PK</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="308" parent="155" name="W_PSEUDO_SZEFA_FK">
+    <foreign-key id="313" parent="155" name="W_PSEUDO_SZEFA_FK">
       <ModifiedTimestamp>2018-03-24.20:51:33</ModifiedTimestamp>
       <ColNames>PSEUDO_SZEFA</ColNames>
       <RefSchemaName>C##239266</RefSchemaName>
@@ -1461,41 +1496,41 @@ NUMER_BANDY</ColNames>
       <RefKeyName>PSEUDO_WAMPIRA_PK</RefKeyName>
       <OnDelete>restrict</OnDelete>
     </foreign-key>
-    <check id="309" parent="155" name="W_PSEUDO_WAMPIRA_NN">
+    <check id="314" parent="155" name="W_PSEUDO_WAMPIRA_NN">
       <ModifiedTimestamp>2018-03-24.20:51:33</ModifiedTimestamp>
       <ColNames>PSEUDO_WAMPIRA</ColNames>
       <Predicate>&quot;PSEUDO_WAMPIRA&quot; IS NOT NULL</Predicate>
     </check>
-    <check id="310" parent="155" name="W_WAMPIR_W_RODZINIE_NN">
+    <check id="315" parent="155" name="W_WAMPIR_W_RODZINIE_NN">
       <ModifiedTimestamp>2018-03-24.20:51:33</ModifiedTimestamp>
       <ColNames>WAMPIR_W_RODZINIE</ColNames>
       <Predicate>&quot;WAMPIR_W_RODZINIE&quot; IS NOT NULL</Predicate>
     </check>
-    <check id="311" parent="155" name="PLEC_WAMPIRA_CH">
+    <check id="316" parent="155" name="PLEC_WAMPIRA_CH">
       <ModifiedTimestamp>2018-03-24.20:51:33</ModifiedTimestamp>
       <ColNames>PLEC_WAMPIRA</ColNames>
       <Predicate>plec_wampira IN (&apos;K&apos;, &apos;M&apos;)</Predicate>
     </check>
-    <check id="312" parent="155" name="W_PLEC_WAMPIRA_NN">
+    <check id="317" parent="155" name="W_PLEC_WAMPIRA_NN">
       <ModifiedTimestamp>2018-03-24.20:51:33</ModifiedTimestamp>
       <ColNames>PLEC_WAMPIRA</ColNames>
       <Predicate>&quot;PLEC_WAMPIRA&quot; IS NOT NULL</Predicate>
     </check>
-    <column id="313" parent="156" name="IMIE_WROGA">
+    <column id="318" parent="156" name="IMIE_WROGA">
       <Position>1</Position>
       <DataType>VARCHAR2(32 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="314" parent="156" name="STOPIEN_WROGOSCI">
+    <column id="319" parent="156" name="STOPIEN_WROGOSCI">
       <Position>2</Position>
       <DataType>NUMBER(2 digit)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="315" parent="156" name="GATUNEK">
+    <column id="320" parent="156" name="GATUNEK">
       <Position>3</Position>
       <DataType>VARCHAR2(32 byte)|0s</DataType>
     </column>
-    <index id="316" parent="156" name="W_IMIE_WROGA_PK">
+    <index id="321" parent="156" name="W_IMIE_WROGA_PK">
       <ObjectId>357719</ObjectId>
       <CreatedTimestamp>2018-05-25.00:50:50</CreatedTimestamp>
       <ModifiedTimestamp>2018-05-25.00:50:50</ModifiedTimestamp>
@@ -1503,44 +1538,44 @@ NUMER_BANDY</ColNames>
       <ColNames>IMIE_WROGA</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="317" parent="156" name="W_IMIE_WROGA_PK">
+    <key id="322" parent="156" name="W_IMIE_WROGA_PK">
       <ModifiedTimestamp>2018-05-25.00:50:50</ModifiedTimestamp>
       <ColNames>IMIE_WROGA</ColNames>
       <InitiallyDeferred>1</InitiallyDeferred>
       <UnderlyingIndexName>W_IMIE_WROGA_PK</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <check id="318" parent="156" name="W_IMIE_WROGA_NN">
+    <check id="323" parent="156" name="W_IMIE_WROGA_NN">
       <ModifiedTimestamp>2018-05-25.00:50:50</ModifiedTimestamp>
       <ColNames>IMIE_WROGA</ColNames>
       <Predicate>&quot;IMIE_WROGA&quot; IS NOT NULL</Predicate>
     </check>
-    <check id="319" parent="156" name="W_STOPIEN_WROGOSCI_CH">
+    <check id="324" parent="156" name="W_STOPIEN_WROGOSCI_CH">
       <ModifiedTimestamp>2018-05-25.00:50:50</ModifiedTimestamp>
       <ColNames>STOPIEN_WROGOSCI</ColNames>
       <Predicate>stopien_wrogosci between 1 and 10</Predicate>
     </check>
-    <check id="320" parent="156" name="W_STOPIEN_WROGOSCI_NN">
+    <check id="325" parent="156" name="W_STOPIEN_WROGOSCI_NN">
       <ModifiedTimestamp>2018-05-25.00:50:50</ModifiedTimestamp>
       <ColNames>STOPIEN_WROGOSCI</ColNames>
       <Predicate>&quot;STOPIEN_WROGOSCI&quot; IS NOT NULL</Predicate>
     </check>
-    <column id="321" parent="157" name="NR_ZLECENIA">
+    <column id="326" parent="157" name="NR_ZLECENIA">
       <Position>1</Position>
       <DataType>NUMBER(6 digit)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="322" parent="157" name="DATA_ZLECENIA">
+    <column id="327" parent="157" name="DATA_ZLECENIA">
       <Position>2</Position>
       <DataType>DATE|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="323" parent="157" name="PSEUDO_WAMPIRA">
+    <column id="328" parent="157" name="PSEUDO_WAMPIRA">
       <Position>3</Position>
       <DataType>VARCHAR2(15 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="324" parent="157" name="NR_ZLECENIA_PK">
+    <index id="329" parent="157" name="NR_ZLECENIA_PK">
       <ObjectId>343831</ObjectId>
       <CreatedTimestamp>2018-03-24.20:51:33</CreatedTimestamp>
       <ModifiedTimestamp>2018-03-24.20:51:33</ModifiedTimestamp>
@@ -1548,14 +1583,14 @@ NUMER_BANDY</ColNames>
       <ColNames>NR_ZLECENIA</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="325" parent="157" name="NR_ZLECENIA_PK">
+    <key id="330" parent="157" name="NR_ZLECENIA_PK">
       <ModifiedTimestamp>2018-03-24.20:51:33</ModifiedTimestamp>
       <ColNames>NR_ZLECENIA</ColNames>
       <InitiallyDeferred>1</InitiallyDeferred>
       <UnderlyingIndexName>NR_ZLECENIA_PK</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="326" parent="157" name="PSEUDO_WAMPIRA_FK">
+    <foreign-key id="331" parent="157" name="PSEUDO_WAMPIRA_FK">
       <ModifiedTimestamp>2018-03-24.20:51:33</ModifiedTimestamp>
       <ColNames>PSEUDO_WAMPIRA</ColNames>
       <RefSchemaName>C##239266</RefSchemaName>
@@ -1563,56 +1598,76 @@ NUMER_BANDY</ColNames>
       <RefKeyName>PSEUDO_WAMPIRA_PK</RefKeyName>
       <OnDelete>restrict</OnDelete>
     </foreign-key>
-    <check id="327" parent="157" name="NR_ZLECENIA_CH">
+    <check id="332" parent="157" name="NR_ZLECENIA_CH">
       <ModifiedTimestamp>2018-03-24.20:51:33</ModifiedTimestamp>
       <ColNames>NR_ZLECENIA</ColNames>
       <Predicate>nr_zlecenia &gt; 0</Predicate>
     </check>
-    <check id="328" parent="157" name="Z_NR_ZLECENIA_NN">
+    <check id="333" parent="157" name="Z_NR_ZLECENIA_NN">
       <ModifiedTimestamp>2018-03-24.20:51:33</ModifiedTimestamp>
       <ColNames>NR_ZLECENIA</ColNames>
       <Predicate>&quot;NR_ZLECENIA&quot; IS NOT NULL</Predicate>
     </check>
-    <check id="329" parent="157" name="Z_DATA_ZLECENIA_NN">
+    <check id="334" parent="157" name="Z_DATA_ZLECENIA_NN">
       <ModifiedTimestamp>2018-03-24.20:51:33</ModifiedTimestamp>
       <ColNames>DATA_ZLECENIA</ColNames>
       <Predicate>&quot;DATA_ZLECENIA&quot; IS NOT NULL</Predicate>
     </check>
-    <check id="330" parent="157" name="Z_PSEUDO_WAMPIRA_NN">
+    <check id="335" parent="157" name="Z_PSEUDO_WAMPIRA_NN">
       <ModifiedTimestamp>2018-03-24.20:51:33</ModifiedTimestamp>
       <ColNames>PSEUDO_WAMPIRA</ColNames>
       <Predicate>&quot;PSEUDO_WAMPIRA&quot; IS NOT NULL</Predicate>
     </check>
-    <column id="331" parent="158" name="PSEUDO">
+    <column id="336" parent="158" name="NUMER_MYSZY">
+      <Position>1</Position>
+      <DataType>NUMBER(*)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="337" parent="159" name="IMIE_WROGA">
+      <Position>1</Position>
+      <DataType>VARCHAR2(32 byte)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="338" parent="160" name="PSEUDO">
       <Position>1</Position>
       <DataType>VARCHAR2(15 byte)|0s</DataType>
     </column>
-    <column id="332" parent="158" name="SPOZYCIE">
+    <column id="339" parent="160" name="SPOZYCIE">
       <Position>2</Position>
       <DataType>NUMBER(*)|0s</DataType>
     </column>
-    <column id="333" parent="159" name="Plec podwladnych">
+    <column id="340" parent="161" name="IMIE_WROGA">
+      <Position>1</Position>
+      <DataType>VARCHAR2(32 byte)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="341" parent="161" name="SILA_GRATYFIKACJI">
+      <Position>2</Position>
+      <DataType>NUMBER(2 digit)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="342" parent="162" name="Plec podwladnych">
       <Position>1</Position>
       <DataType>VARCHAR2(8 byte)|0s</DataType>
     </column>
-    <column id="334" parent="159" name="Pod Drakula">
+    <column id="343" parent="162" name="Pod Drakula">
       <Position>2</Position>
       <DataType>NUMBER(*)|0s</DataType>
     </column>
-    <column id="335" parent="159" name="Pod Opojem">
+    <column id="344" parent="162" name="Pod Opojem">
       <Position>3</Position>
       <DataType>NUMBER(*)|0s</DataType>
     </column>
-    <column id="336" parent="159" name="Pod Wickiem">
+    <column id="345" parent="162" name="Pod Wickiem">
       <Position>4</Position>
       <DataType>NUMBER(*)|0s</DataType>
     </column>
-    <column id="337" parent="160" name="NR_ZLECENIA">
+    <column id="346" parent="163" name="NR_ZLECENIA">
       <Position>1</Position>
       <DataType>NUMBER(6 digit)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="338" parent="160" name="PSEUDO_WAMPIRA">
+    <column id="347" parent="163" name="PSEUDO_WAMPIRA">
       <Position>2</Position>
       <DataType>VARCHAR2(15 byte)|0s</DataType>
       <NotNull>1</NotNull>
