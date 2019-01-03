@@ -1,0 +1,10 @@
+SELECT
+  IMIE,
+  FUNKCJA,
+  PRZYDZIAL_MYSZY
+FROM KOCURY
+WHERE PRZYDZIAL_MYSZY >= ALL (SELECT PRZYDZIAL_MYSZY * 3
+                              FROM KOCURY K, BANDY B
+                              WHERE K.NR_BANDY = B.NR_BANDY AND K.FUNKCJA = 'MILUSIA' AND
+                                    (B.TEREN = 'SAD' OR B.TEREN = 'CALOSC'))
+ORDER BY PRZYDZIAL_MYSZY ASC;
