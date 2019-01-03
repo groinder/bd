@@ -215,6 +215,25 @@ select INCYDENTY_TYP(ref(e), 'SWAWOLNY DYZIO', '2011-07-14', 'OBRZUCIL KAMIENIAM
 from plebs e
 where e.pseudo = 'UCHO';
 
+insert into KONTO select MYSZ_TYP(1, '2017-04-24', '2017-12-09', ref(e)) from elita e where e.pseudo = 'BOLEK';
+insert into KONTO select MYSZ_TYP(2, '2018-02-16', '2018-05-07', ref(e)) from elita e where e.pseudo = 'TYGRYS';
+insert into KONTO select MYSZ_TYP(3, '2011-05-25', NULL, ref(e)) from elita e where e.pseudo = 'BOLEK';
+insert into KONTO select MYSZ_TYP(4, '2016-09-29', '2017-10-18', ref(e)) from elita e where e.pseudo = 'LYSY';
+insert into KONTO select MYSZ_TYP(5, '2011-03-31', NULL, ref(e)) from elita e where e.pseudo = 'MALA';
+insert into KONTO select MYSZ_TYP(6, '2010-08-24', '2016-10-13', ref(e)) from elita e where e.pseudo = 'BOLEK';
+insert into KONTO select MYSZ_TYP(7, '2012-05-05', NULL, ref(e)) from elita e where e.pseudo = 'LOLA';
+insert into KONTO select MYSZ_TYP(8, '2015-12-01', '2018-07-08', ref(e)) from elita e where e.pseudo = 'LYSY';
+insert into KONTO select MYSZ_TYP(9, '2010-07-03', NULL, ref(e)) from elita e where e.pseudo = 'BOLEK';
+insert into KONTO select MYSZ_TYP(10, '2015-03-07', NULL, ref(e)) from elita e where e.pseudo = 'MALA';
+insert into KONTO select MYSZ_TYP(11, '2010-06-04', '2011-02-21', ref(e)) from elita e where e.pseudo = 'LOLA';
+insert into KONTO select MYSZ_TYP(12, '2013-11-12', NULL, ref(e)) from elita e where e.pseudo = 'ZOMBI';
+insert into KONTO select MYSZ_TYP(13, '2015-06-08', '2017-09-14', ref(e)) from elita e where e.pseudo = 'TYGRYS';
+insert into KONTO select MYSZ_TYP(14, '2014-03-21', '2018-09-24', ref(e)) from elita e where e.pseudo = 'ZOMBI';
+insert into KONTO select MYSZ_TYP(15, '2012-08-16', NULL, ref(e)) from elita e where e.pseudo = 'LOLA';
+insert into KONTO select MYSZ_TYP(16, '2010-05-19', '2014-04-08', ref(e)) from elita e where e.pseudo = 'LOLA';
+insert into KONTO select MYSZ_TYP(17, '2016-03-19', '2016-12-15', ref(e)) from elita e where e.pseudo = 'TYGRYS';
+insert into KONTO select MYSZ_TYP(18, '2013-05-10', NULL, ref(e)) from elita e where e.pseudo = 'MALA';
+insert into KONTO select MYSZ_TYP(19, '2016-05-20', NULL, ref(e)) from elita e where e.pseudo = 'RAFA';
 
 
 

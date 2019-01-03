@@ -154,6 +154,8 @@ alter table konto
   add constraint data_wprowadzenia_nn check ( data_wprowadzenia is not null );
 alter table konto
   add constraint wlasciciel_nn check ( wlasciciel is not null );
+alter table konto
+  add constraint data_usuniecia_ck check ( DATA_WPROWADZENIA <= DATA_USUNIECIA );
 
 create or replace type incydenty_typ as object
 (
