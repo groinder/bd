@@ -1,4 +1,3 @@
-SET SERVEROUTPUT ON size 3000;
 declare wybrano varchar2(10);
 
 begin

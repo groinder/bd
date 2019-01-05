@@ -70,4 +70,70 @@ WHERE P.W_STADKU_OD < K3.W_STADKU_OD
   AND K3.IMIE = 'JACEK'
 ORDER BY W_STADKU_OD DESC;
 
+-- Zad. 18
+declare
+  wybrano varchar2(10) := null;
+
+begin
+  begin
+    select distinct FUNKCJA into wybrano
+    from KOCURY2
+    where FUNKCJA = '&funkcja';
+    exception when no_data_found
+    then
+      begin
+        select distinct FUNKCJA into wybrano
+        from elita
+        where FUNKCJA = '&funkcja';
+        exception when no_data_found
+        then
+          begin
+            select distinct FUNKCJA into wybrano
+            from plebs
+            where FUNKCJA = '&funkcja';
+            exception when no_data_found
+            then
+              DBMS_OUTPUT.PUT_LINE('Nie znaleziono');
+          end;
+      end;
+  end;
+
+  if wybrano is not null then
+    DBMS_OUTPUT.PUT_LINE(CONCAT('Znaleziono: ', wybrano));
+  end if;
+end;
+
 -- Zad. 20
+DECLARE
+  ileWybrano NUMBER := 0;
+  CURSOR koty IS SELECT pseudo, PRZYDZIAL_MYSZY + NVL(MYSZY_EXTRA, 0) zjada
+                 FROM KOCURY2
+                 union
+                 SELECT pseudo, PRZYDZIAL_MYSZY + NVL(MYSZY_EXTRA, 0) zjada
+                 FROM elita
+                 union
+                 SELECT pseudo, PRZYDZIAL_MYSZY + NVL(MYSZY_EXTRA, 0) zjada
+                 FROM plebs
+                 ORDER BY zjada DESC;
+  obecny     koty%ROWTYPE;
+BEGIN
+  DBMS_OUTPUT.PUT_LINE('Nr  Psedonim   Zjada');
+  DBMS_OUTPUT.PUT_LINE('--------------------');
+  FOR obecny IN koty
+    LOOP
+      ileWybrano := ileWybrano + 1;
+      DBMS_OUTPUT.PUT_LINE(RPAD(ileWybrano, 4) ||
+                           RPAD(obecny.pseudo, 10) ||
+                           LPAD(obecny.zjada, 6));
+      EXIT WHEN ileWybrano = 5;
+    END LOOP;
+END;
+
+
+
+
+
+
+
+
+
