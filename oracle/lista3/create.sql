@@ -141,7 +141,7 @@ create or replace type body mysz_typ as
     end;
   member function get_wiek return number is
     begin
-      return data_wprowadzenia - nvl(data_usuniecia, sysdate);
+      return round(nvl(data_usuniecia, sysdate) - data_wprowadzenia);
     end;
 end;
 
